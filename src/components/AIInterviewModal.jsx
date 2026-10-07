@@ -87,6 +87,33 @@ const interviewBanks = {
       hints: 'Discuss Burn rate alerts, Envoy/Resilience4j circuit breakers, Chaos Mesh/Gremlin fault injection, and automated blue-green traffic shunting.',
       sampleAnswer: 'We set our SLO at 99.99% availability over a 30-day rolling window. Alerting uses multiwindow multi-burn-rate algorithms. We configure Resilience4j circuit breakers to fail-fast on downstream processor timeouts, and continuously inject network latency using Chaos Mesh in staging.'
     }
+  ],
+  'FinTech & Quantitative Software Engineer': [
+    {
+      id: 'q1',
+      round: 'Low-Latency Concurrency & Ledger Integrity',
+      question: 'How do you design a high-frequency financial order book in modern C++ or Java to minimize cache misses and guarantee strict ACID double-entry invariants?',
+      hints: 'Mention cache locality, lock-free ring buffers (LMAX Disruptor), memory-mapped files, and idempotency keys with monotonic sequence numbers.',
+      sampleAnswer: 'I use flat contiguous memory arrays with cache-line padding to eliminate false sharing. Orders flow through a lock-free LMAX Disruptor ring buffer pinned to dedicated CPU cores. All ledger updates enforce debit-equals-credit checksum invariants backed by append-only write-ahead logs.'
+    }
+  ],
+  'Robotics & Autonomous Systems': [
+    {
+      id: 'q1',
+      round: 'Sensor Fusion & Real-Time Navigation',
+      question: 'How do you fuse 3D LiDAR point clouds and wheel IMU odometry in ROS 2 using an Extended Kalman Filter (EKF), and handle sensor drift during GPS denied indoor navigation?',
+      hints: 'Discuss robot_localization EKF node, Cartographer/Fast-LIO SLAM, loop closure, and covariance matrix tuning.',
+      sampleAnswer: 'I configure the robot_localization EKF node fusing high-frequency IMU angular velocity with wheel encoder linear velocity. In GPS-denied environments, we run Fast-LIO point-to-plane ICP LiDAR odometry with scan-to-map loop closure to correct cumulative orientation and translation drift.'
+    }
+  ],
+  'HealthTech & Biomedical Informatics': [
+    {
+      id: 'q1',
+      round: 'Clinical Interoperability & Medical AI',
+      question: 'How do you architect a SMART on FHIR application querying patient observation records with HIPAA encryption at rest and audit trail logging?',
+      hints: 'Discuss FHIR v4 Resources, SMART OAuth2 scopes, AES-256 field-level encryption for PHI, and immutable audit logs.',
+      sampleAnswer: 'We implement OAuth2 SMART on FHIR with granular patient-scoped tokens. Inbound and outbound FHIR payloads are validated against US Core profiles. PHI elements are encrypted at rest with AWS KMS envelope encryption, and every clinical access event is piped to an immutable tamper-evident audit ledger.'
+    }
   ]
 };
 
@@ -217,6 +244,9 @@ export default function AIInterviewModal({
                     <option value="Big Data & Pipeline Architect">Big Data & Pipeline Architect</option>
                     <option value="Mobile App Developer">Mobile App Developer</option>
                     <option value="Site Reliability Engineer (SRE)">Site Reliability Engineer (SRE)</option>
+                    <option value="FinTech & Quantitative Software Engineer">FinTech & Quantitative Software Engineer</option>
+                    <option value="Robotics & Autonomous Systems">Robotics & Autonomous Systems</option>
+                    <option value="HealthTech & Biomedical Informatics">HealthTech & Biomedical Informatics</option>
                   </select>
                 </div>
 

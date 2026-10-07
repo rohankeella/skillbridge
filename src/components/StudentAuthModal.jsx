@@ -436,6 +436,12 @@ export default function StudentAuthModal({
                 <option value="Blockchain & Web3 Smart Contract Engineer">Blockchain & Web3 Smart Contract Engineer</option>
                 <option value="UI/UX & Product Design Technologist">UI/UX & Product Design Technologist</option>
                 <option value="Site Reliability Engineer (SRE)">Site Reliability Engineer (SRE)</option>
+                <option value="FinTech & Quantitative Software Engineer">FinTech & Quantitative Software Engineer</option>
+                <option value="HealthTech & Biomedical Informatics Engineer">HealthTech & Biomedical Informatics Engineer</option>
+                <option value="Robotics, Autonomous Systems & Computer Vision Engineer">Robotics, Autonomous Systems & Computer Vision Engineer</option>
+                <option value="Game Engine & Real-Time 3D Simulation Developer">Game Engine & Real-Time 3D Simulation Developer</option>
+                <option value="Automotive Embedded & Autonomous Mobility Engineer">Automotive Embedded & Autonomous Mobility Engineer</option>
+                <option value="Climate Intelligence & GreenTech Systems Architect">Climate Intelligence & GreenTech Systems Architect</option>
               </select>
             </div>
 

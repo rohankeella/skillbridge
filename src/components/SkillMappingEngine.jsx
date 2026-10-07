@@ -11,12 +11,17 @@ import {
   BookOpen, 
   Compass, 
   ShieldAlert, 
-  ExternalLink,
-  SlidersHorizontal,
-  FileSpreadsheet,
-  Award,
-  Zap,
-  Check
+  ExternalLink, 
+  SlidersHorizontal, 
+  FileSpreadsheet, 
+  Award, 
+  Zap, 
+  Check,
+  GraduationCap,
+  Clock,
+  Wrench,
+  BadgeCheck,
+  Briefcase
 } from 'lucide-react';
 
 export default function SkillMappingEngine({ 
@@ -271,12 +276,104 @@ export default function SkillMappingEngine({
         </div>
       </div>
 
+      {/* Target Profile Requirements & Academic Prerequisites */}
+      {(selectedBenchmark?.requirements || analysis?.requirements) && (() => {
+        const req = selectedBenchmark?.requirements || analysis?.requirements;
+        return (
+          <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#DDD6FE] shadow-md space-y-5">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-[#E2E8F0]">
+              <div className="flex items-center gap-3">
+                <div className="h-10 w-10 rounded-2xl bg-[#F5F3FF] flex items-center justify-center text-[#7C3AED] border border-[#DDD6FE] shadow-xs">
+                  <Award className="h-5 w-5" />
+                </div>
+                <div>
+                  <h3 className="text-base font-extrabold text-[#0F172A] flex items-center gap-2">
+                    <span>{selectedBenchmark.role} — Industry Profile Requirements</span>
+                    <span className="text-xs font-bold text-[#0284C7] bg-[#F0F9FF] border border-[#BAE6FD] px-2.5 py-0.5 rounded-full">
+                      Hiring Standard
+                    </span>
+                  </h3>
+                  <p className="text-xs text-[#64748B]">
+                    Tier-1 industry qualification benchmarks, minimum practical lab hours, and required tooling standards.
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold text-[#6D28D9] bg-[#F5F3FF] border border-[#DDD6FE] px-3 py-1 rounded-xl">
+                  Market CTC: {selectedBenchmark.avgSalary}
+                </span>
+              </div>
+            </div>
+
+            {/* 4 Eligibility Parameters Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="bg-[#F8FAFC] p-4 rounded-2xl border border-[#E2E8F0] space-y-1">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-[#64748B]">
+                  <GraduationCap className="h-3.5 w-3.5 text-[#7C3AED]" />
+                  <span>Minimum Degree & CGPA:</span>
+                </div>
+                <p className="text-xs font-bold text-[#0F172A] leading-snug">{req.minDegree}</p>
+                <span className="text-[11px] font-semibold text-[#6D28D9] block mt-1">Academic Cutoff: {req.minCgpa}</span>
+              </div>
+
+              <div className="bg-[#F8FAFC] p-4 rounded-2xl border border-[#E2E8F0] space-y-1">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-[#64748B]">
+                  <Clock className="h-3.5 w-3.5 text-[#0284C7]" />
+                  <span>Practical Lab Hours:</span>
+                </div>
+                <p className="text-xs font-bold text-[#0F172A] leading-snug">{req.practicalHours}</p>
+                <span className="text-[11px] font-semibold text-[#0369A1] block mt-1">Experience: {req.experienceLevel}</span>
+              </div>
+
+              <div className="bg-[#F8FAFC] p-4 rounded-2xl border border-[#E2E8F0] space-y-1">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-[#64748B]">
+                  <BadgeCheck className="h-3.5 w-3.5 text-[#16A34A]" />
+                  <span>Recognized Certifications:</span>
+                </div>
+                <div className="flex flex-wrap gap-1 mt-1.5">
+                  {req.certifications?.map((cert, cIdx) => (
+                    <span key={cIdx} className="text-[10px] font-bold bg-white text-[#15803D] border border-[#BBF7D0] px-2 py-0.5 rounded-md">
+                      {cert}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="bg-[#F8FAFC] p-4 rounded-2xl border border-[#E2E8F0] space-y-1">
+                <div className="flex items-center gap-1.5 text-xs font-bold text-[#64748B]">
+                  <Wrench className="h-3.5 w-3.5 text-[#D97706]" />
+                  <span>Production Tooling Stack:</span>
+                </div>
+                <div className="flex flex-wrap gap-1 mt-1.5">
+                  {req.coreTools?.slice(0, 6).map((tool, tIdx) => (
+                    <span key={tIdx} className="text-[10px] font-bold bg-white text-[#0F172A] border border-[#CBD5E1] px-2 py-0.5 rounded-md">
+                      {tool}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Capstone Portfolio Requirement */}
+            {req.capstoneRequirement && (
+              <div className="bg-[#F5F3FF] p-4 rounded-2xl border border-[#DDD6FE] flex items-start gap-3">
+                <Zap className="h-4 w-4 text-[#7C3AED] shrink-0 mt-0.5" />
+                <div className="text-xs">
+                  <strong className="font-bold text-[#6D28D9]">Mandatory Capstone Portfolio Requirement: </strong>
+                  <span className="text-[#334155]">{req.capstoneRequirement}</span>
+                </div>
+              </div>
+            )}
+          </div>
+        );
+      })()}
+
       {/* Competency Gap Breakdown Matrix */}
       <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E2E8F0] shadow-md space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-[#E2E8F0]">
           <div>
             <h2 className="text-xl font-extrabold text-[#0F172A] flex items-center gap-2">
-              <span>Competency-by-Competency Gap Breakdown</span>
+              <span>Required Core Competencies & Syllabus Gap Matrix</span>
               <span className="text-xs font-bold text-[#6D28D9] bg-[#F5F3FF] border border-[#DDD6FE] px-2.5 py-0.5 rounded-full">
                 {breakdown.length} Evaluated
               </span>
@@ -365,6 +462,30 @@ export default function SkillMappingEngine({
                         <span>•</span>
                         <span>Industry Demand Weight: <strong className="text-[#7C3AED]">{item.industryWeight}/100</strong></span>
                       </div>
+
+                      {/* Required Proficiency & Hands-on Deliverable */}
+                      {(item.minProficiency || item.labDeliverable) && (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs pt-1">
+                          {item.minProficiency && (
+                            <div className="bg-white p-2.5 rounded-xl border border-[#E2E8F0] flex items-start gap-2 shadow-2xs">
+                              <SlidersHorizontal className="h-3.5 w-3.5 text-[#7C3AED] shrink-0 mt-0.5" />
+                              <div>
+                                <span className="font-bold text-[#7C3AED]">Required Competency Level: </span>
+                                <span className="text-[#334155]">{item.minProficiency}</span>
+                              </div>
+                            </div>
+                          )}
+                          {item.labDeliverable && (
+                            <div className="bg-white p-2.5 rounded-xl border border-[#E2E8F0] flex items-start gap-2 shadow-2xs">
+                              <BookOpen className="h-3.5 w-3.5 text-[#16A34A] shrink-0 mt-0.5" />
+                              <div>
+                                <span className="font-bold text-[#16A34A]">Lab Deliverable Standard: </span>
+                                <span className="text-[#334155]">{item.labDeliverable}</span>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      )}
 
                       <div className="pt-1 text-xs text-[#0F172A] bg-white p-3 rounded-xl border border-[#CBD5E1] flex items-start gap-2.5 shadow-2xs">
                         <Compass className="h-4 w-4 text-[#0284C7] shrink-0 mt-0.5" />

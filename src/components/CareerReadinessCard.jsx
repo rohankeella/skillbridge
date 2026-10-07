@@ -48,7 +48,13 @@ export default function CareerReadinessCard({
     'Embedded Systems & IoT Hardware Engineer',
     'Blockchain & Web3 Smart Contract Engineer',
     'UI/UX & Product Design Technologist',
-    'Site Reliability Engineer (SRE)'
+    'Site Reliability Engineer (SRE)',
+    'FinTech & Quantitative Software Engineer',
+    'HealthTech & Biomedical Informatics Engineer',
+    'Robotics, Autonomous Systems & Computer Vision Engineer',
+    'Game Engine & Real-Time 3D Simulation Developer',
+    'Automotive Embedded & Autonomous Mobility Engineer',
+    'Climate Intelligence & GreenTech Systems Architect'
   ];
 
   return (

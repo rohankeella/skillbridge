@@ -198,6 +198,8 @@ export class AIEngine {
         gapScore: gapScore,
         status: status,
         urgency: urgency,
+        minProficiency: skill.minProficiency || 'Intermediate to Advanced Production Competency',
+        labDeliverable: skill.labDeliverable || 'Hands-on Repository Implementation & Verified Test Suite',
         matchedCourse: matchedModule ? `${matchedModule.code}: ${matchedModule.title}` : 'None (Missing in Syllabus)',
         recommendedAction: gapScore > 40
           ? `Integrate industry-certified module or hands-on elective covering ${skill.name}`
@@ -220,6 +222,7 @@ export class AIEngine {
       targetIndustryRole: benchmark.role,
       demandScore: benchmark.demandScore,
       averagePackage: benchmark.avgSalary,
+      requirements: benchmark.requirements || null,
       overallMatchPercentage: avgCoverage,
       overallGapScore: 100 - avgCoverage,
       alignmentCategory,

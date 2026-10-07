@@ -213,16 +213,46 @@ export default function PostJobModal({ onClose, onAddJob }) {
           </div>
 
           <div>
-            <label className="block text-slate-800 font-bold mb-1">
-              Required Core Competencies (comma separated):
-            </label>
+            <div className="flex items-center justify-between mb-1">
+              <label className="block text-slate-800 font-bold">
+                Required Core Competencies (comma separated):
+              </label>
+              <span className="text-[11px] text-slate-500">Click tag to add stack</span>
+            </div>
             <input
               type="text"
               required
+              placeholder="e.g. React, Node.js, Docker, Kubernetes"
               value={skillsInput}
               onChange={(e) => setSkillsInput(e.target.value)}
               className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/20 focus:border-[#7C3AED] font-medium"
             />
+            <div className="mt-2 flex flex-wrap gap-1.5">
+              {[
+                'React & Node.js',
+                'Docker & Kubernetes',
+                'PyTorch & GenAI',
+                'AppSec & Burp Suite',
+                'Apache Spark & Kafka',
+                'Low-Latency C++',
+                'ROS 2 & Computer Vision',
+                'HL7 FHIR Interoperability'
+              ].map((skillTag, sIdx) => (
+                <button
+                  key={sIdx}
+                  type="button"
+                  onClick={() => {
+                    const current = skillsInput ? skillsInput.split(',').map(s => s.trim()).filter(Boolean) : [];
+                    if (!current.includes(skillTag)) {
+                      setSkillsInput(current.length > 0 ? `${skillsInput}, ${skillTag}` : skillTag);
+                    }
+                  }}
+                  className="text-[10px] font-bold bg-slate-100 hover:bg-[#F5F3FF] hover:text-[#7C3AED] hover:border-[#DDD6FE] text-slate-700 px-2 py-0.5 rounded-lg border border-slate-200 transition cursor-pointer"
+                >
+                  + {skillTag}
+                </button>
+              ))}
+            </div>
           </div>
 
           <div>
