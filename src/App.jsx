@@ -459,7 +459,7 @@ export default function App() {
             </div>
             <div>
               <span className="font-extrabold text-[#0F172A]">SkillBridge.AI</span>
-              <span className="text-[#64748B] ml-2">— SIH26044 Academia–Industry Collaboration Platform</span>
+              <span className="text-[#64748B] ml-2">— Academia–Industry Collaboration Platform</span>
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-4 text-[#64748B] font-medium">

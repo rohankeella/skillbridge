@@ -95,7 +95,7 @@ export default function Navbar({
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16A34A] opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#16A34A]"></span>
               </span>
-              <span className="text-[#0F172A] font-semibold tracking-wide">SIH26044 National Career Grid Active</span>
+              <span className="text-[#0F172A] font-semibold tracking-wide">National Career Grid Active</span>
             </div>
             <span className="hidden md:inline text-[#CBD5E1]">•</span>
             <span className="hidden md:inline text-[#64748B] text-[11px] font-mono">
@@ -171,7 +171,7 @@ export default function Navbar({
                 SkillBridge<span className="text-[#7C3AED]">.AI</span>
               </span>
               <span className="rounded-full bg-[#F5F3FF] px-2 py-0.5 text-[10px] font-black text-[#7C3AED] border border-[#DDD6FE]">
-                SIH26044
+                Enterprise AI
               </span>
             </div>
             <p className="text-[11px] text-[#64748B] font-medium hidden sm:block">

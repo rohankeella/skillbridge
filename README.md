@@ -1,9 +1,9 @@
-# SkillBridge — SIH26044
+# SkillBridge
 
 ## Portal for Academia–Industry Collaboration for Skill Mapping, Internships and Placement
 
 > **Tagline**: *From classroom skills to industry-ready careers.*  
-> **Problem Statement**: SIH26044 — Digital platform connecting academia, students, and industry through skill mapping, internship opportunities, assessments, career readiness analysis, and placement support.
+> **Mission**: Digital platform connecting academia, students, and industry through skill mapping, internship opportunities, assessments, career readiness analysis, and placement support.
 
 ---
 

@@ -112,7 +112,7 @@ export default function AICareerCoachDrawer({
                 </span>
               </div>
               <p className="text-[11px] text-[#64748B]">
-                Real-time guidance grounded in SIH26044 industry benchmarks
+                Real-time guidance grounded in live industry benchmarks
               </p>
             </div>
           </div>
@@ -210,7 +210,7 @@ export default function AICareerCoachDrawer({
           </form>
 
           <div className="flex items-center justify-between text-[10px] text-[#64748B] px-1">
-            <span>Powered by SIH26044 Career Reasoning Model</span>
+            <span>Powered by SkillBridge Career Reasoning Model</span>
             <button
               onClick={() => {
                 onClose();

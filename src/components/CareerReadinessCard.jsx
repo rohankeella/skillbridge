@@ -36,7 +36,7 @@ export default function CareerReadinessCard({
     (assessmentScore * 0.15) +
     (experienceScore * 0.15) +
     (certificationsScore * 0.10)
-  ); // Equals 78% (matches SIH26044 spec exactly!)
+  ); // Equals 78% (matches readiness spec exactly)
 
   const roles = [
     'Full Stack Developer',
@@ -53,7 +53,7 @@ export default function CareerReadinessCard({
           <div className="flex items-center gap-2">
             <span className="px-3 py-1 rounded-full text-[11px] font-black uppercase tracking-wider bg-[#F5F3FF] text-[#6D28D9] border border-[#DDD6FE] flex items-center gap-1.5">
               <Sparkles className="h-3 w-3 text-[#7C3AED]" />
-              <span>SIH26044 AI Competency Metric</span>
+              <span>AI Competency Metric</span>
             </span>
             <span className="bg-[#F0FDF4] text-[#15803D] text-[11px] font-bold px-2.5 py-0.5 rounded-full border border-[#BBF7D0] flex items-center gap-1">
               <TrendingUp className="h-3 w-3" />

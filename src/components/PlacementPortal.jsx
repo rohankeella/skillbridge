@@ -172,7 +172,7 @@ export default function PlacementPortal({
             <div className="space-y-1">
               <span className="text-xs font-black uppercase tracking-wider text-[#D97706] flex items-center gap-1.5">
                 <Briefcase className="h-3.5 w-3.5" />
-                <span>SIH Section 9 — Company Command Center</span>
+                <span>Enterprise Recruiter Command Center</span>
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A]">
                 Recruiter Talent Pipeline
@@ -251,7 +251,7 @@ export default function PlacementPortal({
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#16A34A]"></span>
               </span>
               <span className="text-xs font-bold text-[#16A34A] uppercase tracking-wider">
-                SIH Section 7 — 6-Factor AI Internship & Placement Matching Engine
+                6-Factor AI Internship & Placement Matching Engine
               </span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A]">

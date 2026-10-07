@@ -108,7 +108,7 @@ export default function AdminDashboard() {
               </span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A]">
-              SIH26044 Platform Oversight & Ecosystem Audit
+              National Platform Oversight & Ecosystem Audit
             </h1>
             <p className="text-xs sm:text-sm text-[#64748B]">
               Verified regulatory administration bridging colleges, students, and national industry partners.
@@ -327,7 +327,7 @@ export default function AdminDashboard() {
                     {job.company} • Compensation: <strong className="text-[#15803D]">{job.stipend}</strong> ({job.openings} Openings)
                   </p>
                   <span className="inline-flex items-center gap-1 text-[11px] text-[#15803D]">
-                    <CheckCircle2 className="h-3 w-3" /> AI Verification: Compliant with SIH minimum stipend guidelines
+                    <CheckCircle2 className="h-3 w-3" /> AI Verification: Compliant with national minimum stipend guidelines
                   </span>
                 </div>
 

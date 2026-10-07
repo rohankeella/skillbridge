@@ -1,5 +1,5 @@
 /**
- * AI/Recommendation Engine for SkillBridge (SIH26044)
+ * AI/Recommendation Engine for SkillBridge
  * Implements:
  * 1. Career Readiness Score Engine (Technical 40%, Projects 20%, Assessments 15%, Experience 15%, Certifications 10%)
  * 2. 6-Factor Weighted Internship Matching Algorithm
@@ -11,7 +11,7 @@
 
 export class AIEngine {
   /**
-   * Calculates overall Career Readiness Score based on SIH26044 weighted formula:
+   * Calculates overall Career Readiness Score based on weighted formula:
    * 40% Technical Skills + 20% Projects + 15% Assessments + 15% Experience + 10% Certifications
    */
   static calculateCareerReadiness(student, targetRoleBenchmark) {
@@ -77,7 +77,7 @@ export class AIEngine {
   }
 
   /**
-   * 6-Factor Weighted Internship Matching Algorithm (SIH26044 Section 20):
+   * 6-Factor Weighted Internship Matching Algorithm:
    * Match Score = Skill Match × 50% + Education Match × 15% + Project Match × 15% + Experience Match × 10% + Location Match × 5% + Cert Match × 5%
    */
   static matchCandidateToJobDetailed(student, job) {
@@ -249,7 +249,7 @@ export class AIEngine {
   }
 
   /**
-   * Synthesizes interactive visual learning roadmap with progression states (SIH26044 Section 6)
+   * Synthesizes interactive visual learning roadmap with progression states
    */
   static generateVisualRoadmap(currentSkills = [], benchmark) {
     const role = benchmark?.role || 'Full Stack Developer';
@@ -295,7 +295,7 @@ export class AIEngine {
   }
 
   /**
-   * AI Resume Parser: Extracts structured competencies from raw resume text (SIH26044 Section 21)
+   * AI Resume Parser: Extracts structured competencies from raw resume text
    */
   static parseResumeAI(resumeText = '') {
     const text = resumeText.toLowerCase();
@@ -351,7 +351,7 @@ export class AIEngine {
   }
 
   /**
-   * AI Career Assistant: Provides contextual guidance on gaps and next steps (SIH26044 Section 21)
+   * AI Career Assistant: Provides contextual guidance on gaps and next steps
    */
   static chatCareerCoach(student, query = '') {
     const q = query.toLowerCase();

@@ -138,7 +138,7 @@ CERTIFICATIONS:
                   AI Resume Parser & Skill Extractor
                 </h3>
                 <span className="text-[10px] font-black uppercase tracking-wider bg-[#F5F3FF] text-[#6D28D9] px-2 py-0.5 rounded-full border border-[#DDD6FE]">
-                  SIH26044
+                  Neural Extractor
                 </span>
               </div>
               <p className="text-xs text-[#64748B]">

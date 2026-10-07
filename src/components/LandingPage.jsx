@@ -219,7 +219,7 @@ export default function LandingPage({
             {/* Top Tag */}
             <div className="inline-flex items-center gap-2 rounded-full bg-[#F5F3FF] border border-[#DDD6FE] px-4 py-1.5 text-xs font-bold text-[#6D28D9] shadow-2xs">
               <Sparkles className="h-4 w-4 text-[#7C3AED]" />
-              <span>Smart India Hackathon SIH26044 • Unified Industry-Academia Ecosystem</span>
+              <span>SkillBridge AI • Unified Industry-Academia Ecosystem</span>
             </div>
 
             {/* Main Headline */}

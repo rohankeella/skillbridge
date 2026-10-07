@@ -151,7 +151,7 @@ export default function VisualRoadmap({
         <div className="space-y-1">
           <div className="inline-flex items-center gap-2 rounded-full bg-[#F5F3FF] border border-[#DDD6FE] px-3.5 py-1 text-xs font-bold text-[#6D28D9]">
             <Sparkles className="h-3.5 w-3.5 text-[#7C3AED]" />
-            <span>SIH Section 6 — Interactive AI Skill Progression Roadmap</span>
+            <span>Interactive AI Skill Progression Roadmap</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A]">
             Personalized Career Learning Pathway

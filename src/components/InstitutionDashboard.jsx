@@ -46,7 +46,7 @@ export default function InstitutionDashboard({
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#16A34A]"></span>
               </span>
               <span className="text-xs font-bold text-[#16A34A] uppercase tracking-wider">
-                SIH Section 10 — College Analytics & TPO Command Center
+                College Analytics & TPO Command Center
               </span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold text-[#0F172A]">
@@ -236,7 +236,7 @@ export default function InstitutionDashboard({
             <div className="p-4 bg-[#F0FDF4] border border-[#BBF7D0] rounded-2xl text-xs text-[#15803D] space-y-1 shadow-2xs">
               <div className="flex items-center gap-1.5 font-bold text-[#15803D]">
                 <Sparkles className="h-4 w-4 text-[#16A34A]" />
-                <span>SIH26044 Closed-Loop Feedback Loop</span>
+                <span>Autonomous Closed-Loop Feedback Engine</span>
               </div>
               <p className="text-[11px] leading-relaxed text-[#0F172A]">
                 Corporate feedback from Microsoft and Google drives automatically recalibrates college syllabus recommendations every 14 days.

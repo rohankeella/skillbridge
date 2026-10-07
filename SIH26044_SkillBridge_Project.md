@@ -1,4 +1,4 @@
-# SkillBridge — SIH26044
+# SkillBridge
 
 ## Portal for Academia–Industry Collaboration for Skill Mapping, Internships and Placement
 
@@ -11,7 +11,7 @@
 
 Students often struggle to understand whether their academic skills match current industry requirements. Colleges have limited visibility into changing industry skill demands, while companies struggle to identify students with the right competencies.
 
-SIH26044 proposes a digital platform that connects **academia, students, and industry** through skill mapping, internship opportunities, assessments, career readiness analysis, and placement support.
+SkillBridge proposes a digital platform that connects **academia, students, and industry** through skill mapping, internship opportunities, assessments, career readiness analysis, and placement support.
 
 ---
 

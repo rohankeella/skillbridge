@@ -425,7 +425,7 @@ connectDB().catch(console.error);
 app.get('/api/status', (req, res) => {
   res.json({
     status: 'online',
-    project: 'SIH26044 — SkillBridge Platform',
+    project: 'SkillBridge Platform',
     architecture: {
       frontend: 'React 19 + Tailwind CSS v4 + Vite',
       backend: 'Node.js + Express 5',
@@ -436,7 +436,7 @@ app.get('/api/status', (req, res) => {
   });
 });
 
-// 2. Career Readiness Score (SIH26044 Section 4.1)
+// 2. Career Readiness Score
 app.get('/api/students/:id/career-readiness', (req, res) => {
   const student = fallbackStudents.find(s => s.id === req.params.id) || fallbackStudents[0];
   const benchmark = initialBenchmarks.find(b => b.role.toLowerCase() === student.targetRole.toLowerCase()) || initialBenchmarks[0];
@@ -445,14 +445,14 @@ app.get('/api/students/:id/career-readiness', (req, res) => {
   res.json({ success: true, studentId: student.id, studentName: student.name, readiness });
 });
 
-// 3. AI Resume Parser & Skill Extractor (SIH26044 Section 21)
+// 3. AI Resume Parser & Skill Extractor
 app.post('/api/students/:id/resume-parse', (req, res) => {
   const { resumeText = '' } = req.body;
   const parsed = AIEngine.parseResumeAI(resumeText);
   res.json({ success: true, ...parsed });
 });
 
-// 4. Interactive Visual Learning Roadmap (SIH26044 Section 6)
+// 4. Interactive Visual Learning Roadmap
 app.get('/api/roadmap/:studentId', (req, res) => {
   const student = fallbackStudents.find(s => s.id === req.params.studentId) || fallbackStudents[0];
   const benchmark = initialBenchmarks.find(b => b.role.toLowerCase() === student.targetRole.toLowerCase()) || initialBenchmarks[0];
@@ -461,7 +461,7 @@ app.get('/api/roadmap/:studentId', (req, res) => {
   res.json({ success: true, studentId: student.id, studentName: student.name, roadmapData });
 });
 
-// 5. 6-Factor Weighted Internship Matching (SIH26044 Section 20)
+// 5. 6-Factor Weighted Internship Matching
 app.get('/api/matches/:studentId', (req, res) => {
   const student = fallbackStudents.find(s => s.id === req.params.studentId) || fallbackStudents[0];
   
@@ -479,7 +479,7 @@ app.get('/api/matches/:studentId', (req, res) => {
   res.json({ success: true, studentId: student.id, count: matches.length, matches });
 });
 
-// 6. AI Career Coach Assistant (SIH26044 Section 21)
+// 6. AI Career Coach Assistant
 app.post('/api/ai-coach/chat', (req, res) => {
   const { studentId = 'std-1', message = '' } = req.body;
   const student = fallbackStudents.find(s => s.id === studentId) || fallbackStudents[0];
@@ -488,7 +488,7 @@ app.post('/api/ai-coach/chat', (req, res) => {
   res.json({ success: true, ...response });
 });
 
-// 7. Admin Platform Analytics (SIH26044 Section 11)
+// 7. Admin Platform Analytics
 app.get('/api/admin/analytics', (req, res) => {
   res.json({
     success: true,
@@ -705,13 +705,13 @@ app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'ok', 
     timestamp: new Date().toISOString(), 
-    service: 'SkillBridge SIH26044 API',
+    service: 'SkillBridge API',
     database: getDBStatus()
   });
 });
 
 const server = app.listen(PORT, () => {
-  console.log(`🚀 SkillBridge SIH26044 Backend running on http://localhost:${PORT}`);
+  console.log(`🚀 SkillBridge Backend running on http://localhost:${PORT}`);
 });
 
 server.on('error', (err) => {
