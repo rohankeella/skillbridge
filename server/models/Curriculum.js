@@ -12,7 +12,7 @@ const curriculumSchema = new mongoose.Schema({
   id: { type: String, required: true, unique: true },
   institution: { type: String, required: true },
   degree: { type: String, required: true },
-  semester: { type: String, required: true },
+  semester: { type: String, default: '' },
   totalStudents: { type: Number, default: 120 },
   modules: [moduleSchema],
   currentStrengths: [{ type: String }],

@@ -435,7 +435,6 @@ const initialCurriculums = [
     id: 'curr-cs-btech',
     institution: 'Apex Institute of Technology',
     degree: 'B.Tech Computer Science & Engineering',
-    semester: 'Semester 6 / 2026 Batch',
     totalStudents: 240,
     modules: [
       { code: 'CS301', title: 'Data Structures & Algorithms in C++', depth: 95, practicalHours: 40, theoryHours: 50 },
@@ -452,16 +451,167 @@ const initialCurriculums = [
     id: 'curr-ai-btech',
     institution: 'National University of Engineering',
     degree: 'B.Tech Artificial Intelligence & Data Science',
-    semester: 'Semester 7 / 2026 Batch',
     totalStudents: 180,
     modules: [
       { code: 'AI401', title: 'Machine Learning Algorithms (Scikit-Learn)', depth: 88, practicalHours: 40, theoryHours: 45 },
       { code: 'AI402', title: 'Deep Learning & Neural Networks', depth: 82, practicalHours: 35, theoryHours: 45 },
       { code: 'AI403', title: 'Natural Language Processing Fundamentals', depth: 75, practicalHours: 30, theoryHours: 40 },
-      { code: 'AI404', title: 'Python Programming for Data Analysis', depth: 85, practicalHours: 40, theoryHours: 30 }
+      { code: 'AI404', title: 'Python Programming for Data Analysis', depth: 85, practicalHours: 40, theoryHours: 30 },
+      { code: 'AI405', title: 'Probability, Linear Algebra & Computational Statistics', depth: 90, practicalHours: 20, theoryHours: 50 },
+      { code: 'AI406', title: 'Big Data Technologies & MapReduce Foundations', depth: 70, practicalHours: 25, theoryHours: 40 }
     ],
     currentStrengths: ['Mathematical rigor', 'Classic ML models', 'Statistical data exploration'],
     identifiedDeficits: ['Large Language Model (LLM) fine-tuning', 'Vector Search & Embeddings', 'MLOps pipelines in Kubernetes']
+  },
+  {
+    id: 'curr-cloud-devops',
+    institution: 'Indian Institute of Technology & Sciences',
+    degree: 'B.Tech Cloud Computing & DevOps Engineering',
+    totalStudents: 210,
+    modules: [
+      { code: 'CL301', title: 'Cloud Infrastructure & Distributed Virtualization', depth: 92, practicalHours: 45, theoryHours: 40 },
+      { code: 'CL302', title: 'Linux Administration, Shell Scripting & Sockets', depth: 88, practicalHours: 35, theoryHours: 45 },
+      { code: 'CL303', title: 'Containerization Basics & Microservice Patterns', depth: 82, practicalHours: 30, theoryHours: 40 },
+      { code: 'CL304', title: 'Enterprise Network Architecture & VPC Peering', depth: 85, practicalHours: 25, theoryHours: 45 },
+      { code: 'CL305', title: 'Continuous Integration & Build Automation Basics', depth: 78, practicalHours: 35, theoryHours: 35 }
+    ],
+    currentStrengths: ['Linux server internals', 'Virtual networking protocols', 'Infrastructure automation basics'],
+    identifiedDeficits: ['Production Kubernetes cluster administration', 'GitOps & ArgoCD canary deployments', 'eBPF observability']
+  },
+  {
+    id: 'curr-cyber-btech',
+    institution: 'Birla Technical University',
+    degree: 'B.Tech Cybersecurity & Information Defense',
+    totalStudents: 160,
+    modules: [
+      { code: 'CY401', title: 'Applied Cryptography & Public Key Infrastructure', depth: 90, practicalHours: 35, theoryHours: 50 },
+      { code: 'CY402', title: 'Ethical Hacking, Penetration Testing & Tools', depth: 88, practicalHours: 45, theoryHours: 40 },
+      { code: 'CY403', title: 'Web Application Security & OWASP Defenses', depth: 84, practicalHours: 40, theoryHours: 35 },
+      { code: 'CY404', title: 'Network Security, Firewalls & Intrusion Detection', depth: 86, practicalHours: 30, theoryHours: 45 },
+      { code: 'CY405', title: 'Cyber Forensics, Malware Analysis & Incident Response', depth: 75, practicalHours: 30, theoryHours: 40 }
+    ],
+    currentStrengths: ['Offensive security tooling', 'Network traffic analysis', 'Cryptographic algorithms'],
+    identifiedDeficits: ['Cloud Security Posture Management (CSPM)', 'DevSecOps automated gates', 'Zero Trust IAM architecture']
+  },
+  {
+    id: 'curr-data-eng',
+    institution: 'Vellore Global University',
+    degree: 'B.Tech Big Data Systems & Data Engineering',
+    totalStudents: 195,
+    modules: [
+      { code: 'DE301', title: 'Distributed Data Storage & Apache Spark Programming', depth: 86, practicalHours: 40, theoryHours: 45 },
+      { code: 'DE302', title: 'Relational Database Internals & Advanced SQL Querying', depth: 92, practicalHours: 35, theoryHours: 45 },
+      { code: 'DE303', title: 'Real-Time Streaming Systems & Event Architectures', depth: 78, practicalHours: 30, theoryHours: 40 },
+      { code: 'DE304', title: 'Data Warehousing, Dimensional Modeling & ETL Batches', depth: 84, practicalHours: 35, theoryHours: 40 },
+      { code: 'DE305', title: 'NoSQL Distributed Systems (Cassandra, MongoDB, HBase)', depth: 80, practicalHours: 30, theoryHours: 35 }
+    ],
+    currentStrengths: ['Complex relational SQL modeling', 'Hadoop & Spark batch jobs', 'Data warehousing paradigms'],
+    identifiedDeficits: ['Modern dbt transformation testing', 'Apache Iceberg lakehouse tables', 'Vector database ingestion pipelines']
+  },
+  {
+    id: 'curr-embedded-iot',
+    institution: 'Delhi Metropolitan Institute of Technology',
+    degree: 'B.Tech Electronics & Embedded Systems',
+    totalStudents: 175,
+    modules: [
+      { code: 'ES301', title: 'Microcontroller Architecture & ARM Cortex Systems', depth: 94, practicalHours: 45, theoryHours: 45 },
+      { code: 'ES302', title: 'Embedded C Programming & Hardware Interfacing', depth: 90, practicalHours: 40, theoryHours: 40 },
+      { code: 'ES303', title: 'Real-Time Operating Systems (FreeRTOS Architecture)', depth: 82, practicalHours: 35, theoryHours: 40 },
+      { code: 'ES304', title: 'Serial Communication Protocols (I2C, SPI, UART, CAN)', depth: 88, practicalHours: 30, theoryHours: 45 },
+      { code: 'ES305', title: 'IoT Wireless Networking & Low-Power Sensor Nodes', depth: 76, practicalHours: 30, theoryHours: 35 }
+    ],
+    currentStrengths: ['Bare-metal firmware programming', 'Hardware communication buses', 'Oscilloscope circuit debugging'],
+    identifiedDeficits: ['TinyML on ultra-low-power microcontrollers', 'Matter smart home protocol', 'OTA firmware updates']
+  },
+  {
+    id: 'curr-robotics-btech',
+    institution: "St. Xavier's Engineering College",
+    degree: 'B.Tech Robotics & Autonomous Mechatronics',
+    totalStudents: 150,
+    modules: [
+      { code: 'RO401', title: 'Robotics Kinematics, Dynamics & Motion Control', depth: 92, practicalHours: 40, theoryHours: 50 },
+      { code: 'RO402', title: 'Robot Operating System (ROS 2 Architecture & Nodes)', depth: 84, practicalHours: 45, theoryHours: 35 },
+      { code: 'RO403', title: 'Computer Vision, Image Processing & Pattern Tracking', depth: 80, practicalHours: 35, theoryHours: 40 },
+      { code: 'RO404', title: 'Feedback Control Systems, PID & State-Space Modeling', depth: 88, practicalHours: 30, theoryHours: 45 },
+      { code: 'RO405', title: 'Autonomous Navigation, SLAM & Sensor Fusion Basics', depth: 75, practicalHours: 30, theoryHours: 40 }
+    ],
+    currentStrengths: ['Mathematical kinematics & dynamics', 'PID motor control', 'Simulation environments'],
+    identifiedDeficits: ['3D LiDAR Fast-LIO SLAM mapping', 'Deep learning visual servoing with YOLOv8', 'MoveIt 2 motion planning']
+  },
+  {
+    id: 'curr-software-eng',
+    institution: 'MIT World Peace Engineering School',
+    degree: 'B.Tech Software Engineering & Full Stack Architecture',
+    totalStudents: 220,
+    modules: [
+      { code: 'SE301', title: 'Object-Oriented Analysis, Design Patterns & UML', depth: 90, practicalHours: 35, theoryHours: 45 },
+      { code: 'SE302', title: 'Modern JavaScript, TypeScript & Frontend Frameworks', depth: 85, practicalHours: 45, theoryHours: 35 },
+      { code: 'SE303', title: 'Server-Side Architecture, RESTful APIs & Middleware', depth: 86, practicalHours: 40, theoryHours: 40 },
+      { code: 'SE304', title: 'Software Quality Assurance, Unit Testing & Test Automation', depth: 80, practicalHours: 35, theoryHours: 35 },
+      { code: 'SE305', title: 'Relational & Document Database System Engineering', depth: 84, practicalHours: 30, theoryHours: 40 }
+    ],
+    currentStrengths: ['Design pattern application', 'Full stack web architectures', 'Unit test coverage methodologies'],
+    identifiedDeficits: ['Docker container orchestration', 'Cloud native deployment pipelines', 'Redis caching & high-scale concurrency']
+  },
+  {
+    id: 'curr-fintech-btech',
+    institution: 'Pune University School of Technology',
+    degree: 'B.Tech FinTech & Quantitative Computational Systems',
+    totalStudents: 140,
+    modules: [
+      { code: 'FT401', title: 'High-Performance Computational C++ & Algorithms', depth: 92, practicalHours: 40, theoryHours: 45 },
+      { code: 'FT402', title: 'Financial Markets, Securities Trading & Market Microstructure', depth: 88, practicalHours: 25, theoryHours: 50 },
+      { code: 'FT403', title: 'Time-Series Analysis & Python Quantitative Modeling', depth: 86, practicalHours: 35, theoryHours: 40 },
+      { code: 'FT404', title: 'Cryptographic Ledgers, Smart Contracts & Distributed Consensus', depth: 80, practicalHours: 35, theoryHours: 40 },
+      { code: 'FT405', title: 'Financial Risk Management, Portfolio Optimization & Metrics', depth: 84, practicalHours: 20, theoryHours: 45 }
+    ],
+    currentStrengths: ['Low-level C++ algorithms', 'Quantitative statistical backtesting', 'Financial ledger principles'],
+    identifiedDeficits: ['Sub-microsecond FIX protocol engines', 'Lock-free memory architectures', 'TimescaleDB hypertable clustering']
+  },
+  {
+    id: 'curr-mca-amrita',
+    institution: 'Amrita Institute of Advanced Computing',
+    degree: 'Master of Computer Applications (MCA)',
+    totalStudents: 165,
+    modules: [
+      { code: 'MC301', title: 'Advanced Data Structures, Graph Theory & Algorithms', depth: 92, practicalHours: 40, theoryHours: 45 },
+      { code: 'MC302', title: 'Enterprise Java & Spring Boot Web Microservices', depth: 88, practicalHours: 45, theoryHours: 40 },
+      { code: 'MC303', title: 'Database Administration, SQL Tuning & NoSQL Systems', depth: 86, practicalHours: 35, theoryHours: 40 },
+      { code: 'MC304', title: 'Cloud Computing, Virtualization & Service Management', depth: 78, practicalHours: 30, theoryHours: 40 },
+      { code: 'MC305', title: 'Mobile Application Development & Responsive Frameworks', depth: 80, practicalHours: 35, theoryHours: 35 }
+    ],
+    currentStrengths: ['Enterprise application development', 'Database management', 'Comprehensive software lifecycle'],
+    identifiedDeficits: ['Kubernetes container orchestration', 'Modern React 19 / Next.js ecosystem', 'Automated CI/CD GitOps']
+  },
+  {
+    id: 'curr-biomed-psg',
+    institution: 'PSG College of Technology',
+    degree: 'B.Tech Biomedical Engineering & Medical Informatics',
+    totalStudents: 130,
+    modules: [
+      { code: 'BM401', title: 'Biomedical Signal Acquisition, DSP & Biosensors', depth: 90, practicalHours: 40, theoryHours: 45 },
+      { code: 'BM402', title: 'Medical Imaging Techniques, X-Ray, CT, MRI & DICOM', depth: 88, practicalHours: 35, theoryHours: 45 },
+      { code: 'BM403', title: 'Health Information Systems, EHR & Hospital Telemetry', depth: 78, practicalHours: 30, theoryHours: 40 },
+      { code: 'BM404', title: 'Biomedical Instrumentation & Medical Device Regulations', depth: 86, practicalHours: 35, theoryHours: 45 },
+      { code: 'BM405', title: 'Bioinformatics Fundamentals & Genomic Sequence Analysis', depth: 75, practicalHours: 25, theoryHours: 40 }
+    ],
+    currentStrengths: ['Medical imaging theory', 'Biosignal acquisition', 'Regulatory medical standards'],
+    identifiedDeficits: ['HL7 FHIR v4 REST APIs', 'Deep learning medical image segmentation', 'HIPAA compliant cloud telemetry']
+  },
+  {
+    id: 'curr-des-iida',
+    institution: 'International Institute of Digital Arts',
+    degree: 'B.Des Human-Computer Interaction & UI/UX Design',
+    totalStudents: 120,
+    modules: [
+      { code: 'DS301', title: 'Design Thinking, User Research & Empathy Mapping', depth: 92, practicalHours: 40, theoryHours: 40 },
+      { code: 'DS302', title: 'Figma Design Systems, Auto-Layout & Component Variants', depth: 94, practicalHours: 50, theoryHours: 30 },
+      { code: 'DS303', title: 'Information Architecture, Wireframing & Usability Audits', depth: 86, practicalHours: 35, theoryHours: 35 },
+      { code: 'DS304', title: 'Frontend Styling Basics (HTML5, Modern CSS & Flexbox)', depth: 78, practicalHours: 35, theoryHours: 30 },
+      { code: 'DS305', title: 'Web Accessibility Standards (WCAG 2.1) & Inclusive Design', depth: 82, practicalHours: 25, theoryHours: 35 }
+    ],
+    currentStrengths: ['User-centric research methodologies', 'High-fidelity Figma prototyping', 'Design token architectures'],
+    identifiedDeficits: ['Tailwind CSS v4 token integration', 'Interactive motion with Framer Motion', 'Usability A/B split testing metrics']
   }
 ];
 

@@ -217,8 +217,9 @@ export class AIEngine {
 
     return {
       curriculumId: curriculum.id,
-      curriculumName: `${curriculum.institution} - ${curriculum.degree}`,
-      semester: curriculum.semester,
+      curriculumName: `${curriculum.institution} — ${curriculum.degree}`,
+      institution: curriculum.institution,
+      degree: curriculum.degree,
       targetIndustryRole: benchmark.role,
       demandScore: benchmark.demandScore,
       averagePackage: benchmark.avgSalary,
@@ -232,7 +233,7 @@ export class AIEngine {
         {
           title: 'Industry-Led 30-Hour Capstone Lab',
           description: `Partner with corporate affiliates to introduce hands-on project work in ${skillBreakdown.filter(s => s.urgency === 'High').map(s => s.skill).slice(0, 2).join(' and ') || 'Cloud Technologies'}.`,
-          timeframe: 'Next Academic Semester',
+          timeframe: 'Next Academic Curriculum Revision',
           readinessBoost: '+18% placement match'
         },
         {

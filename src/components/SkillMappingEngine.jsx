@@ -123,7 +123,7 @@ export default function SkillMappingEngine({
             >
               {curriculums.map((c) => (
                 <option key={c.id} value={c.id} className="bg-white text-[#0F172A]">
-                  {c.institution} — {c.degree} ({c.semester})
+                  {c.institution} — {c.degree}
                 </option>
               ))}
             </select>
@@ -537,7 +537,7 @@ export default function SkillMappingEngine({
             </div>
             <div>
               <h3 className="font-extrabold text-[#0F172A] text-base">Academic Senate & Board of Studies (BoS) Action Plan</h3>
-              <p className="text-xs text-[#64748B]">High-impact bridging interventions for the upcoming semester</p>
+              <p className="text-xs text-[#64748B]">High-impact academic interventions for degree curriculum accreditation</p>
             </div>
           </div>
 
