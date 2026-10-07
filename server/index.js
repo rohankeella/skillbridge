@@ -432,6 +432,292 @@ const initialBenchmarks = [
 
 const initialCurriculums = [
   {
+    id: 'curr-vjti-mumbai',
+    institution: 'Veermata Jijabai Technological Institute (VJTI), Matunga, Mumbai',
+    degree: 'B.Tech Computer Engineering',
+    totalStudents: 180,
+    modules: [
+      { code: 'CE301', title: 'Data Structures & Algorithmic Analysis in C++', depth: 95, practicalHours: 40, theoryHours: 50 },
+      { code: 'CE302', title: 'Advanced Database Systems & Distributed SQL', depth: 88, practicalHours: 35, theoryHours: 45 },
+      { code: 'CE303', title: 'Operating Systems & Linux Concurrency', depth: 90, practicalHours: 30, theoryHours: 45 },
+      { code: 'CE304', title: 'Computer Networks & TCP/IP Protocol Suite', depth: 85, practicalHours: 25, theoryHours: 45 },
+      { code: 'CE305', title: 'Full Stack Web Architectures & Modern JS', depth: 65, practicalHours: 35, theoryHours: 30 },
+      { code: 'CE306', title: 'Artificial Intelligence & Machine Learning', depth: 75, practicalHours: 25, theoryHours: 40 }
+    ],
+    currentStrengths: ['Rigorous algorithmic complexity analysis', 'Low-level OS internals', 'System-level C++ programming'],
+    identifiedDeficits: ['Production Kubernetes & Cloud Deployment', 'Microservices with Docker & CI/CD', 'Real-world System Observability']
+  },
+  {
+    id: 'curr-spit-mumbai',
+    institution: 'Sardar Patel Institute of Technology (SPIT), Andheri, Mumbai',
+    degree: 'B.Tech Information Technology',
+    totalStudents: 160,
+    modules: [
+      { code: 'IT301', title: 'Design & Analysis of Algorithms', depth: 92, practicalHours: 40, theoryHours: 45 },
+      { code: 'IT302', title: 'Database Engineering, SQL & Index Optimization', depth: 90, practicalHours: 35, theoryHours: 40 },
+      { code: 'IT303', title: 'Cloud Computing & Distributed Systems', depth: 80, practicalHours: 30, theoryHours: 40 },
+      { code: 'IT304', title: 'Information Security & Applied Cryptography', depth: 85, practicalHours: 30, theoryHours: 45 },
+      { code: 'IT305', title: 'Full Stack Web Application Development', depth: 70, practicalHours: 40, theoryHours: 30 }
+    ],
+    currentStrengths: ['Software design patterns', 'Relational database normalization', 'Information security algorithms'],
+    identifiedDeficits: ['Container orchestration with Docker & Kubernetes', 'Modern Next.js & React 19 workflows', 'AWS Cloud Infrastructure-as-Code']
+  },
+  {
+    id: 'curr-kjsce-mumbai',
+    institution: 'K. J. Somaiya College of Engineering (KJSCE), Vidyavihar, Mumbai',
+    degree: 'B.Tech Artificial Intelligence & Data Science',
+    totalStudents: 150,
+    modules: [
+      { code: 'AD301', title: 'Machine Learning Foundations & Scikit-Learn', depth: 90, practicalHours: 40, theoryHours: 45 },
+      { code: 'AD302', title: 'Deep Learning, Computer Vision & PyTorch', depth: 85, practicalHours: 35, theoryHours: 45 },
+      { code: 'AD303', title: 'Natural Language Processing & Transformers', depth: 78, practicalHours: 30, theoryHours: 40 },
+      { code: 'AD304', title: 'Applied Statistics & Exploratory Data Analysis', depth: 88, practicalHours: 30, theoryHours: 40 },
+      { code: 'AD305', title: 'Big Data Processing with Apache Spark', depth: 75, practicalHours: 25, theoryHours: 40 }
+    ],
+    currentStrengths: ['Statistical mathematical modeling', 'PyTorch deep learning pipelines', 'Data manipulation with Pandas'],
+    identifiedDeficits: ['Large Language Model (LLM) fine-tuning & RAG', 'Production MLOps pipelines', 'Vector database indexing (Pinecone/Milvus)']
+  },
+  {
+    id: 'curr-djsce-mumbai',
+    institution: 'Dwarkadas J. Sanghvi College of Engineering (DJSCE), Vile Parle, Mumbai',
+    degree: 'B.Tech Computer Engineering',
+    totalStudents: 180,
+    modules: [
+      { code: 'DJ301', title: 'Data Structures & Object-Oriented Java Programming', depth: 92, practicalHours: 40, theoryHours: 45 },
+      { code: 'DJ302', title: 'Relational Database Management Systems & SQL', depth: 88, practicalHours: 35, theoryHours: 40 },
+      { code: 'DJ303', title: 'Operating Systems & Process Synchronization', depth: 85, practicalHours: 25, theoryHours: 45 },
+      { code: 'DJ304', title: 'Computer Networks & Internet Protocol Routing', depth: 82, practicalHours: 25, theoryHours: 40 },
+      { code: 'DJ305', title: 'Web Application Engineering & Frameworks', depth: 68, practicalHours: 35, theoryHours: 35 }
+    ],
+    currentStrengths: ['Object-oriented design patterns in Java', 'Relational database schema modeling', 'Core computer networks'],
+    identifiedDeficits: ['Cloud deployment & AWS ECS/EKS', 'CI/CD pipeline automation', 'Distributed caching with Redis']
+  },
+  {
+    id: 'curr-tsec-mumbai',
+    institution: 'Thadomal Shahani Engineering College (TSEC), Bandra, Mumbai',
+    degree: 'B.Tech Computer Science & Engineering',
+    totalStudents: 170,
+    modules: [
+      { code: 'TS301', title: 'Core Data Structures & Algorithmic Problem Solving', depth: 90, practicalHours: 40, theoryHours: 45 },
+      { code: 'TS302', title: 'Database Systems, Transactions & Normalization', depth: 86, practicalHours: 30, theoryHours: 40 },
+      { code: 'TS303', title: 'Web Architectures & RESTful API Services', depth: 72, practicalHours: 35, theoryHours: 35 },
+      { code: 'TS304', title: 'Software Engineering & Agile Methodologies', depth: 84, practicalHours: 25, theoryHours: 40 },
+      { code: 'TS305', title: 'Cybersecurity Principles & Threat Vectors', depth: 78, practicalHours: 25, theoryHours: 40 }
+    ],
+    currentStrengths: ['Algorithmic competitive programming', 'Agile project tracking', 'SQL query optimization'],
+    identifiedDeficits: ['Docker containerization', 'Cloud microservices', 'Production automated testing']
+  },
+  {
+    id: 'curr-crce-mumbai',
+    institution: 'Fr. Conceicao Rodrigues College of Engineering (CRCE), Bandra, Mumbai',
+    degree: 'B.Tech Computer Engineering',
+    totalStudents: 140,
+    modules: [
+      { code: 'CR301', title: 'Algorithms & Data Structures in C++', depth: 92, practicalHours: 40, theoryHours: 45 },
+      { code: 'CR302', title: 'Database Management Systems & Transactions', depth: 88, practicalHours: 35, theoryHours: 40 },
+      { code: 'CR303', title: 'Computer Networks & Network Security', depth: 85, practicalHours: 30, theoryHours: 40 },
+      { code: 'CR304', title: 'Operating Systems & Kernel Programming', depth: 82, practicalHours: 25, theoryHours: 45 },
+      { code: 'CR305', title: 'Artificial Intelligence & Intelligent Agents', depth: 74, practicalHours: 25, theoryHours: 35 }
+    ],
+    currentStrengths: ['Low-level programming fundamentals', 'Relational database design', 'Network security foundations'],
+    identifiedDeficits: ['Cloud deployment & Serverless functions', 'Modern frontend React state management', 'Kubernetes cluster operations']
+  },
+  {
+    id: 'curr-vesit-mumbai',
+    institution: "Vivekanand Education Society's Institute of Technology (VESIT), Chembur, Mumbai",
+    degree: 'B.Tech Information Technology',
+    totalStudents: 160,
+    modules: [
+      { code: 'VE301', title: 'Data Structures & Analysis of Algorithms', depth: 90, practicalHours: 40, theoryHours: 45 },
+      { code: 'VE302', title: 'Relational Databases & SQL Optimization', depth: 88, practicalHours: 35, theoryHours: 40 },
+      { code: 'VE303', title: 'Web Systems Development & Full Stack Basics', depth: 72, practicalHours: 40, theoryHours: 30 },
+      { code: 'VE304', title: 'Information Security & Network Defense', depth: 82, practicalHours: 25, theoryHours: 45 },
+      { code: 'VE305', title: 'Cloud Computing Foundations & Virtual Machines', depth: 76, practicalHours: 25, theoryHours: 40 }
+    ],
+    currentStrengths: ['Database tuning', 'Network architecture', 'Algorithm analysis'],
+    identifiedDeficits: ['Kubernetes & Helm charts', 'Modern Next.js / TypeScript', 'Event-driven architectures with Kafka']
+  },
+  {
+    id: 'curr-dbit-mumbai',
+    institution: 'Don Bosco Institute of Technology (DBIT), Kurla, Mumbai',
+    degree: 'B.Tech Computer Engineering',
+    totalStudents: 130,
+    modules: [
+      { code: 'DB301', title: 'Data Structures & Object-Oriented Java', depth: 88, practicalHours: 40, theoryHours: 45 },
+      { code: 'DB302', title: 'Database Management Systems & SQL', depth: 86, practicalHours: 35, theoryHours: 40 },
+      { code: 'DB303', title: 'Computer Network Architecture & Protocols', depth: 82, practicalHours: 25, theoryHours: 40 },
+      { code: 'DB304', title: 'Software Testing & Quality Assurance', depth: 84, practicalHours: 30, theoryHours: 35 },
+      { code: 'DB305', title: 'Machine Learning Basics & Python Data Science', depth: 75, practicalHours: 30, theoryHours: 35 }
+    ],
+    currentStrengths: ['Software testing methodologies', 'Core Java programming', 'Relational database modeling'],
+    identifiedDeficits: ['Cloud native DevOps & GitHub Actions', 'Containerized microservices', 'High-throughput NoSQL scaling']
+  },
+  {
+    id: 'curr-mpstme-mumbai',
+    institution: 'Mukesh Patel School of Technology Management & Engineering (NMIMS MPSTME), Mumbai',
+    degree: 'B.Tech Computer Science & Business Systems',
+    totalStudents: 150,
+    modules: [
+      { code: 'NM301', title: 'Data Structures & Business Algorithms', depth: 88, practicalHours: 35, theoryHours: 45 },
+      { code: 'NM302', title: 'Enterprise Databases & SQL Analytics', depth: 88, practicalHours: 35, theoryHours: 40 },
+      { code: 'NM303', title: 'Full Stack Web Engineering & Cloud Services', depth: 78, practicalHours: 40, theoryHours: 35 },
+      { code: 'NM304', title: 'Financial Technology & Quantitative Analysis', depth: 82, practicalHours: 25, theoryHours: 45 },
+      { code: 'NM305', title: 'Cloud Architecture & DevOps Systems Basics', depth: 75, practicalHours: 30, theoryHours: 35 }
+    ],
+    currentStrengths: ['Enterprise technology alignment', 'Financial modeling', 'Full stack web architectures'],
+    identifiedDeficits: ['Deep container orchestration with Kubernetes', 'Advanced distributed caching', 'Automated security linting DevSecOps']
+  },
+  {
+    id: 'curr-fcrit-navimumbai',
+    institution: 'Fr. C. Rodrigues Institute of Technology (FCRIT), Vashi, Navi Mumbai',
+    degree: 'B.Tech Computer Engineering',
+    totalStudents: 160,
+    modules: [
+      { code: 'FC301', title: 'Data Structures & Algorithms in Java', depth: 92, practicalHours: 40, theoryHours: 45 },
+      { code: 'FC302', title: 'Relational Database Management Systems & SQL', depth: 88, practicalHours: 35, theoryHours: 40 },
+      { code: 'FC303', title: 'Operating Systems & Linux Kernel Internals', depth: 86, practicalHours: 30, theoryHours: 45 },
+      { code: 'FC304', title: 'Computer Networks, Routing & Network Security', depth: 84, practicalHours: 25, theoryHours: 45 },
+      { code: 'FC305', title: 'Web Development & API Engineering Basics', depth: 68, practicalHours: 35, theoryHours: 30 }
+    ],
+    currentStrengths: ['Strong algorithmic foundation in Java', 'Linux system programming', 'Database design & queries'],
+    identifiedDeficits: ['Docker containerization & Kubernetes', 'Modern TypeScript/React ecosystem', 'Cloud CI/CD pipelines']
+  },
+  {
+    id: 'curr-rait-navimumbai',
+    institution: 'Ramrao Adik Institute of Technology (RAIT), D.Y. Patil University, Nerul, Navi Mumbai',
+    degree: 'B.Tech Computer Science & Engineering',
+    totalStudents: 220,
+    modules: [
+      { code: 'RA301', title: 'Advanced Data Structures & Algorithms', depth: 90, practicalHours: 40, theoryHours: 45 },
+      { code: 'RA302', title: 'Database Architecture & SQL Queries', depth: 88, practicalHours: 35, theoryHours: 40 },
+      { code: 'RA303', title: 'Full Stack Web Application Design', depth: 75, practicalHours: 40, theoryHours: 35 },
+      { code: 'RA304', title: 'Machine Learning & Data Mining Fundamentals', depth: 82, practicalHours: 30, theoryHours: 40 },
+      { code: 'RA305', title: 'Cloud Computing & Microservices Basics', depth: 76, practicalHours: 25, theoryHours: 40 }
+    ],
+    currentStrengths: ['Full stack project development', 'Machine learning foundations', 'Relational database modeling'],
+    identifiedDeficits: ['Production Kubernetes deployments', 'Real-time Kafka streaming', 'Advanced AWS Cloud DevOps']
+  },
+  {
+    id: 'curr-sigce-navimumbai',
+    institution: 'Smt. Indira Gandhi College of Engineering (SIGCE), Ghansoli, Navi Mumbai',
+    degree: 'B.Tech Artificial Intelligence & Machine Learning',
+    totalStudents: 140,
+    modules: [
+      { code: 'SI301', title: 'Machine Learning Foundations & Python Data Stacks', depth: 88, practicalHours: 40, theoryHours: 45 },
+      { code: 'SI302', title: 'Neural Networks & Deep Learning Architectures', depth: 82, practicalHours: 35, theoryHours: 45 },
+      { code: 'SI303', title: 'Natural Language Processing & Text Mining', depth: 76, practicalHours: 30, theoryHours: 40 },
+      { code: 'SI304', title: 'Applied Mathematics & Linear Algebra for AI', depth: 90, practicalHours: 20, theoryHours: 50 },
+      { code: 'SI305', title: 'Data Visualization & Statistical Analytics', depth: 84, practicalHours: 35, theoryHours: 30 }
+    ],
+    currentStrengths: ['Python scientific libraries (NumPy, SciPy)', 'Linear algebra mathematics', 'Basic neural network models'],
+    identifiedDeficits: ['Generative AI & LLM Fine-Tuning', 'MLOps pipelines in Kubernetes', 'High-performance model serving (Triton/vLLM)']
+  },
+  {
+    id: 'curr-sies-navimumbai',
+    institution: 'SIES Graduate School of Technology (SIES GST), Nerul, Navi Mumbai',
+    degree: 'B.Tech Information Technology',
+    totalStudents: 150,
+    modules: [
+      { code: 'SG301', title: 'Design & Analysis of Algorithms', depth: 90, practicalHours: 40, theoryHours: 45 },
+      { code: 'SG302', title: 'Database Systems & Data Warehousing', depth: 88, practicalHours: 35, theoryHours: 40 },
+      { code: 'SG303', title: 'Cloud Infrastructure & Virtual Networks', depth: 80, practicalHours: 30, theoryHours: 40 },
+      { code: 'SG304', title: 'Web Development & Modern Frameworks', depth: 72, practicalHours: 35, theoryHours: 35 },
+      { code: 'SG305', title: 'Information & Cyber Defense Mechanisms', depth: 80, practicalHours: 25, theoryHours: 40 }
+    ],
+    currentStrengths: ['Data warehouse schema design', 'Algorithm analysis', 'Cyber defense fundamentals'],
+    identifiedDeficits: ['Docker containerization', 'Cloud automated CI/CD pipelines', 'Production microservices monitoring']
+  },
+  {
+    id: 'curr-terna-navimumbai',
+    institution: 'Terna Engineering College, Nerul, Navi Mumbai',
+    degree: 'B.Tech Computer Engineering',
+    totalStudents: 180,
+    modules: [
+      { code: 'TE301', title: 'Data Structures & Algorithms in C++', depth: 90, practicalHours: 40, theoryHours: 45 },
+      { code: 'TE302', title: 'Database Management Systems (RDBMS & SQL)', depth: 86, practicalHours: 35, theoryHours: 40 },
+      { code: 'TE303', title: 'Computer Networks & TCP/IP Model', depth: 82, practicalHours: 25, theoryHours: 45 },
+      { code: 'TE304', title: 'Software Engineering & Automated Testing', depth: 80, practicalHours: 30, theoryHours: 35 },
+      { code: 'TE305', title: 'Artificial Intelligence Foundations', depth: 72, practicalHours: 25, theoryHours: 40 }
+    ],
+    currentStrengths: ['Algorithmic fundamentals', 'Relational database queries', 'Software engineering lifecycle'],
+    identifiedDeficits: ['Containerization with Docker & Kubernetes', 'Modern full stack frameworks (React/Node)', 'Cloud serverless deployments']
+  },
+  {
+    id: 'curr-bvcoe-navimumbai',
+    institution: 'Bharati Vidyapeeth College of Engineering (BVCOE), Belapur, Navi Mumbai',
+    degree: 'B.Tech Computer Science & Engineering',
+    totalStudents: 170,
+    modules: [
+      { code: 'BV301', title: 'Core Data Structures & Algorithms in C++', depth: 90, practicalHours: 40, theoryHours: 45 },
+      { code: 'BV302', title: 'Relational Databases & SQL Systems', depth: 88, practicalHours: 35, theoryHours: 40 },
+      { code: 'BV303', title: 'Operating Systems & System Programming', depth: 84, practicalHours: 25, theoryHours: 45 },
+      { code: 'BV304', title: 'Web Development Fundamentals (HTML, JS, PHP)', depth: 65, practicalHours: 35, theoryHours: 30 },
+      { code: 'BV305', title: 'Distributed Cloud Computing Basics', depth: 76, practicalHours: 25, theoryHours: 40 }
+    ],
+    currentStrengths: ['Data structures in C++', 'Operating systems concurrency', 'Database queries & transactions'],
+    identifiedDeficits: ['Modern React & TypeScript', 'Microservices with Docker & Kubernetes', 'Automated cloud CI/CD']
+  },
+  {
+    id: 'curr-pce-navimumbai',
+    institution: 'Pillai College of Engineering (PCE), New Panvel, Navi Mumbai',
+    degree: 'B.Tech Computer Engineering',
+    totalStudents: 190,
+    modules: [
+      { code: 'PC301', title: 'Data Structures & Object-Oriented Programming', depth: 92, practicalHours: 40, theoryHours: 45 },
+      { code: 'PC302', title: 'Database Engineering & Transaction Management', depth: 88, practicalHours: 35, theoryHours: 40 },
+      { code: 'PC303', title: 'Computer Network Protocols & Security', depth: 85, practicalHours: 30, theoryHours: 40 },
+      { code: 'PC304', title: 'Full Stack Web Application Design', depth: 75, practicalHours: 40, theoryHours: 35 },
+      { code: 'PC305', title: 'Machine Learning & Data Science Applications', depth: 78, practicalHours: 30, theoryHours: 40 }
+    ],
+    currentStrengths: ['Full stack project implementations', 'Relational database design', 'Object-oriented programming'],
+    identifiedDeficits: ['Cloud native Kubernetes orchestration', 'Modern Next.js / React 19', 'Production DevOps pipelines']
+  },
+  {
+    id: 'curr-dmce-navimumbai',
+    institution: 'Datta Meghe College of Engineering (DMCE), Airoli, Navi Mumbai',
+    degree: 'B.Tech Computer Science & Engineering',
+    totalStudents: 160,
+    modules: [
+      { code: 'DM301', title: 'Algorithms & Data Structures in C++', depth: 90, practicalHours: 40, theoryHours: 45 },
+      { code: 'DM302', title: 'Relational Database Management Systems', depth: 86, practicalHours: 35, theoryHours: 40 },
+      { code: 'DM303', title: 'Operating Systems Architecture & Kernels', depth: 84, practicalHours: 25, theoryHours: 45 },
+      { code: 'DM304', title: 'Network Security & Cryptography', depth: 80, practicalHours: 25, theoryHours: 40 },
+      { code: 'DM305', title: 'Web Application Engineering & Services', depth: 70, practicalHours: 35, theoryHours: 35 }
+    ],
+    currentStrengths: ['Data structures in C++', 'Network security concepts', 'Operating systems design'],
+    identifiedDeficits: ['Containerization with Docker', 'Kubernetes cluster deployment', 'Modern frontend JavaScript frameworks']
+  },
+  {
+    id: 'curr-acpce-navimumbai',
+    institution: 'A. C. Patil College of Engineering (ACPCE), Kharghar, Navi Mumbai',
+    degree: 'B.Tech Computer Engineering',
+    totalStudents: 150,
+    modules: [
+      { code: 'AC301', title: 'Data Structures & Algorithmic Problem Solving', depth: 88, practicalHours: 40, theoryHours: 45 },
+      { code: 'AC302', title: 'Database Management Systems & SQL', depth: 86, practicalHours: 35, theoryHours: 40 },
+      { code: 'AC303', title: 'Computer Networks & Data Communication', depth: 82, practicalHours: 25, theoryHours: 45 },
+      { code: 'AC304', title: 'Software Engineering & Agile Frameworks', depth: 80, practicalHours: 25, theoryHours: 40 },
+      { code: 'AC305', title: 'Artificial Intelligence Overview & Python', depth: 72, practicalHours: 25, theoryHours: 40 }
+    ],
+    currentStrengths: ['Database query design', 'Computer networking basics', 'Core data structures'],
+    identifiedDeficits: ['Production Docker & Kubernetes', 'Modern full stack frameworks', 'Cloud CI/CD automated deployments']
+  },
+  {
+    id: 'curr-apsit-mumbai',
+    institution: 'A. P. Shah Institute of Technology (APSIT), Thane, Mumbai Region',
+    degree: 'B.Tech Information Technology',
+    totalStudents: 160,
+    modules: [
+      { code: 'AP301', title: 'Design & Analysis of Algorithms', depth: 90, practicalHours: 40, theoryHours: 45 },
+      { code: 'AP302', title: 'Database Engineering & Advanced SQL', depth: 88, practicalHours: 35, theoryHours: 40 },
+      { code: 'AP303', title: 'Full Stack Web Technologies & Node.js', depth: 76, practicalHours: 40, theoryHours: 35 },
+      { code: 'AP304', title: 'Cloud Infrastructure & Virtualization', depth: 78, practicalHours: 25, theoryHours: 40 },
+      { code: 'AP305', title: 'Cybersecurity Fundamentals & Network Defenses', depth: 80, practicalHours: 25, theoryHours: 40 }
+    ],
+    currentStrengths: ['Full stack project engineering', 'Algorithm problem solving', 'Database optimization'],
+    identifiedDeficits: ['Kubernetes container orchestration', 'Modern Next.js / TypeScript', 'Enterprise CI/CD automation']
+  },
+  {
     id: 'curr-cs-btech',
     institution: 'Apex Institute of Technology',
     degree: 'B.Tech Computer Science & Engineering',
@@ -492,126 +778,6 @@ const initialCurriculums = [
     ],
     currentStrengths: ['Offensive security tooling', 'Network traffic analysis', 'Cryptographic algorithms'],
     identifiedDeficits: ['Cloud Security Posture Management (CSPM)', 'DevSecOps automated gates', 'Zero Trust IAM architecture']
-  },
-  {
-    id: 'curr-data-eng',
-    institution: 'Vellore Global University',
-    degree: 'B.Tech Big Data Systems & Data Engineering',
-    totalStudents: 195,
-    modules: [
-      { code: 'DE301', title: 'Distributed Data Storage & Apache Spark Programming', depth: 86, practicalHours: 40, theoryHours: 45 },
-      { code: 'DE302', title: 'Relational Database Internals & Advanced SQL Querying', depth: 92, practicalHours: 35, theoryHours: 45 },
-      { code: 'DE303', title: 'Real-Time Streaming Systems & Event Architectures', depth: 78, practicalHours: 30, theoryHours: 40 },
-      { code: 'DE304', title: 'Data Warehousing, Dimensional Modeling & ETL Batches', depth: 84, practicalHours: 35, theoryHours: 40 },
-      { code: 'DE305', title: 'NoSQL Distributed Systems (Cassandra, MongoDB, HBase)', depth: 80, practicalHours: 30, theoryHours: 35 }
-    ],
-    currentStrengths: ['Complex relational SQL modeling', 'Hadoop & Spark batch jobs', 'Data warehousing paradigms'],
-    identifiedDeficits: ['Modern dbt transformation testing', 'Apache Iceberg lakehouse tables', 'Vector database ingestion pipelines']
-  },
-  {
-    id: 'curr-embedded-iot',
-    institution: 'Delhi Metropolitan Institute of Technology',
-    degree: 'B.Tech Electronics & Embedded Systems',
-    totalStudents: 175,
-    modules: [
-      { code: 'ES301', title: 'Microcontroller Architecture & ARM Cortex Systems', depth: 94, practicalHours: 45, theoryHours: 45 },
-      { code: 'ES302', title: 'Embedded C Programming & Hardware Interfacing', depth: 90, practicalHours: 40, theoryHours: 40 },
-      { code: 'ES303', title: 'Real-Time Operating Systems (FreeRTOS Architecture)', depth: 82, practicalHours: 35, theoryHours: 40 },
-      { code: 'ES304', title: 'Serial Communication Protocols (I2C, SPI, UART, CAN)', depth: 88, practicalHours: 30, theoryHours: 45 },
-      { code: 'ES305', title: 'IoT Wireless Networking & Low-Power Sensor Nodes', depth: 76, practicalHours: 30, theoryHours: 35 }
-    ],
-    currentStrengths: ['Bare-metal firmware programming', 'Hardware communication buses', 'Oscilloscope circuit debugging'],
-    identifiedDeficits: ['TinyML on ultra-low-power microcontrollers', 'Matter smart home protocol', 'OTA firmware updates']
-  },
-  {
-    id: 'curr-robotics-btech',
-    institution: "St. Xavier's Engineering College",
-    degree: 'B.Tech Robotics & Autonomous Mechatronics',
-    totalStudents: 150,
-    modules: [
-      { code: 'RO401', title: 'Robotics Kinematics, Dynamics & Motion Control', depth: 92, practicalHours: 40, theoryHours: 50 },
-      { code: 'RO402', title: 'Robot Operating System (ROS 2 Architecture & Nodes)', depth: 84, practicalHours: 45, theoryHours: 35 },
-      { code: 'RO403', title: 'Computer Vision, Image Processing & Pattern Tracking', depth: 80, practicalHours: 35, theoryHours: 40 },
-      { code: 'RO404', title: 'Feedback Control Systems, PID & State-Space Modeling', depth: 88, practicalHours: 30, theoryHours: 45 },
-      { code: 'RO405', title: 'Autonomous Navigation, SLAM & Sensor Fusion Basics', depth: 75, practicalHours: 30, theoryHours: 40 }
-    ],
-    currentStrengths: ['Mathematical kinematics & dynamics', 'PID motor control', 'Simulation environments'],
-    identifiedDeficits: ['3D LiDAR Fast-LIO SLAM mapping', 'Deep learning visual servoing with YOLOv8', 'MoveIt 2 motion planning']
-  },
-  {
-    id: 'curr-software-eng',
-    institution: 'MIT World Peace Engineering School',
-    degree: 'B.Tech Software Engineering & Full Stack Architecture',
-    totalStudents: 220,
-    modules: [
-      { code: 'SE301', title: 'Object-Oriented Analysis, Design Patterns & UML', depth: 90, practicalHours: 35, theoryHours: 45 },
-      { code: 'SE302', title: 'Modern JavaScript, TypeScript & Frontend Frameworks', depth: 85, practicalHours: 45, theoryHours: 35 },
-      { code: 'SE303', title: 'Server-Side Architecture, RESTful APIs & Middleware', depth: 86, practicalHours: 40, theoryHours: 40 },
-      { code: 'SE304', title: 'Software Quality Assurance, Unit Testing & Test Automation', depth: 80, practicalHours: 35, theoryHours: 35 },
-      { code: 'SE305', title: 'Relational & Document Database System Engineering', depth: 84, practicalHours: 30, theoryHours: 40 }
-    ],
-    currentStrengths: ['Design pattern application', 'Full stack web architectures', 'Unit test coverage methodologies'],
-    identifiedDeficits: ['Docker container orchestration', 'Cloud native deployment pipelines', 'Redis caching & high-scale concurrency']
-  },
-  {
-    id: 'curr-fintech-btech',
-    institution: 'Pune University School of Technology',
-    degree: 'B.Tech FinTech & Quantitative Computational Systems',
-    totalStudents: 140,
-    modules: [
-      { code: 'FT401', title: 'High-Performance Computational C++ & Algorithms', depth: 92, practicalHours: 40, theoryHours: 45 },
-      { code: 'FT402', title: 'Financial Markets, Securities Trading & Market Microstructure', depth: 88, practicalHours: 25, theoryHours: 50 },
-      { code: 'FT403', title: 'Time-Series Analysis & Python Quantitative Modeling', depth: 86, practicalHours: 35, theoryHours: 40 },
-      { code: 'FT404', title: 'Cryptographic Ledgers, Smart Contracts & Distributed Consensus', depth: 80, practicalHours: 35, theoryHours: 40 },
-      { code: 'FT405', title: 'Financial Risk Management, Portfolio Optimization & Metrics', depth: 84, practicalHours: 20, theoryHours: 45 }
-    ],
-    currentStrengths: ['Low-level C++ algorithms', 'Quantitative statistical backtesting', 'Financial ledger principles'],
-    identifiedDeficits: ['Sub-microsecond FIX protocol engines', 'Lock-free memory architectures', 'TimescaleDB hypertable clustering']
-  },
-  {
-    id: 'curr-mca-amrita',
-    institution: 'Amrita Institute of Advanced Computing',
-    degree: 'Master of Computer Applications (MCA)',
-    totalStudents: 165,
-    modules: [
-      { code: 'MC301', title: 'Advanced Data Structures, Graph Theory & Algorithms', depth: 92, practicalHours: 40, theoryHours: 45 },
-      { code: 'MC302', title: 'Enterprise Java & Spring Boot Web Microservices', depth: 88, practicalHours: 45, theoryHours: 40 },
-      { code: 'MC303', title: 'Database Administration, SQL Tuning & NoSQL Systems', depth: 86, practicalHours: 35, theoryHours: 40 },
-      { code: 'MC304', title: 'Cloud Computing, Virtualization & Service Management', depth: 78, practicalHours: 30, theoryHours: 40 },
-      { code: 'MC305', title: 'Mobile Application Development & Responsive Frameworks', depth: 80, practicalHours: 35, theoryHours: 35 }
-    ],
-    currentStrengths: ['Enterprise application development', 'Database management', 'Comprehensive software lifecycle'],
-    identifiedDeficits: ['Kubernetes container orchestration', 'Modern React 19 / Next.js ecosystem', 'Automated CI/CD GitOps']
-  },
-  {
-    id: 'curr-biomed-psg',
-    institution: 'PSG College of Technology',
-    degree: 'B.Tech Biomedical Engineering & Medical Informatics',
-    totalStudents: 130,
-    modules: [
-      { code: 'BM401', title: 'Biomedical Signal Acquisition, DSP & Biosensors', depth: 90, practicalHours: 40, theoryHours: 45 },
-      { code: 'BM402', title: 'Medical Imaging Techniques, X-Ray, CT, MRI & DICOM', depth: 88, practicalHours: 35, theoryHours: 45 },
-      { code: 'BM403', title: 'Health Information Systems, EHR & Hospital Telemetry', depth: 78, practicalHours: 30, theoryHours: 40 },
-      { code: 'BM404', title: 'Biomedical Instrumentation & Medical Device Regulations', depth: 86, practicalHours: 35, theoryHours: 45 },
-      { code: 'BM405', title: 'Bioinformatics Fundamentals & Genomic Sequence Analysis', depth: 75, practicalHours: 25, theoryHours: 40 }
-    ],
-    currentStrengths: ['Medical imaging theory', 'Biosignal acquisition', 'Regulatory medical standards'],
-    identifiedDeficits: ['HL7 FHIR v4 REST APIs', 'Deep learning medical image segmentation', 'HIPAA compliant cloud telemetry']
-  },
-  {
-    id: 'curr-des-iida',
-    institution: 'International Institute of Digital Arts',
-    degree: 'B.Des Human-Computer Interaction & UI/UX Design',
-    totalStudents: 120,
-    modules: [
-      { code: 'DS301', title: 'Design Thinking, User Research & Empathy Mapping', depth: 92, practicalHours: 40, theoryHours: 40 },
-      { code: 'DS302', title: 'Figma Design Systems, Auto-Layout & Component Variants', depth: 94, practicalHours: 50, theoryHours: 30 },
-      { code: 'DS303', title: 'Information Architecture, Wireframing & Usability Audits', depth: 86, practicalHours: 35, theoryHours: 35 },
-      { code: 'DS304', title: 'Frontend Styling Basics (HTML5, Modern CSS & Flexbox)', depth: 78, practicalHours: 35, theoryHours: 30 },
-      { code: 'DS305', title: 'Web Accessibility Standards (WCAG 2.1) & Inclusive Design', depth: 82, practicalHours: 25, theoryHours: 35 }
-    ],
-    currentStrengths: ['User-centric research methodologies', 'High-fidelity Figma prototyping', 'Design token architectures'],
-    identifiedDeficits: ['Tailwind CSS v4 token integration', 'Interactive motion with Framer Motion', 'Usability A/B split testing metrics']
   }
 ];
 
@@ -826,7 +992,7 @@ let fallbackApplications = [
     company: 'Microsoft',
     studentId: 'std-1',
     studentName: 'Rohan Sharma',
-    college: 'Apex Institute of Technology',
+    college: 'Veermata Jijabai Technological Institute (VJTI), Mumbai',
     cgpa: 8.7,
     matchScore: 94,
     status: 'Shortlisted for Technical Assessment',
@@ -848,9 +1014,9 @@ let fallbackStudents = [
     id: 'std-1',
     name: 'Rohan Sharma',
     avatar: '👨‍💻',
-    email: 'rohan.sharma@apex.edu',
-    college: 'Apex Institute of Technology',
-    department: 'Computer Science & Engineering',
+    email: 'rohan.sharma@vjti.ac.in',
+    college: 'Veermata Jijabai Technological Institute (VJTI), Mumbai',
+    department: 'Computer Engineering',
     year: '4th Year (Batch 2026)',
     cgpa: 8.7,
     targetRole: 'Full Stack Developer',
@@ -878,9 +1044,9 @@ let fallbackStudents = [
     id: 'std-2',
     name: 'Priya Sundaram',
     avatar: '👩‍💻',
-    email: 'priya.sundaram@nue.edu',
-    college: 'National University of Engineering',
-    department: 'AI & Data Science',
+    email: 'priya.sundaram@fcrit.ac.in',
+    college: 'Fr. C. Rodrigues Institute of Technology (FCRIT), Navi Mumbai',
+    department: 'Computer Engineering',
     year: '4th Year (Batch 2026)',
     cgpa: 9.2,
     targetRole: 'AI / Machine Learning Engineer',

@@ -30,7 +30,7 @@ export default function StudentAuthModal({
   const [loading, setLoading] = useState(false);
 
   // Login Form State
-  const [loginIdentifier, setLoginIdentifier] = useState('rohan.sharma@apex.edu');
+  const [loginIdentifier, setLoginIdentifier] = useState('rohan.sharma@vjti.ac.in');
   const [loginPassword, setLoginPassword] = useState('password123');
 
   // Registration Form State
@@ -39,7 +39,7 @@ export default function StudentAuthModal({
     email: '',
     password: '',
     confirmPassword: '',
-    college: 'Apex Institute of Technology',
+    college: 'Veermata Jijabai Technological Institute (VJTI), Mumbai',
     department: 'Computer Science & Engineering',
     year: '3rd Year (Batch 2027)',
     rollNumber: '',
@@ -354,11 +354,25 @@ export default function StudentAuthModal({
                   onChange={(e) => setRegData({ ...regData, college: e.target.value })}
                   className="w-full bg-slate-50 border border-slate-200 rounded-xl p-3 text-slate-900 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#7C3AED]/20 focus:border-[#7C3AED] font-medium"
                 >
-                  <option value="Apex Institute of Technology">Apex Institute of Technology</option>
-                  <option value="National University of Engineering">National University of Engineering</option>
-                  <option value="Delhi Technological University">Delhi Technological University</option>
-                  <option value="Indian Institute of Information Tech">Indian Institute of Information Tech</option>
-                  <option value="State Polytechnic & Engineering College">State Polytechnic & Engineering College</option>
+                  <option value="Veermata Jijabai Technological Institute (VJTI), Mumbai">Veermata Jijabai Technological Institute (VJTI), Mumbai</option>
+                  <option value="Sardar Patel Institute of Technology (SPIT), Mumbai">Sardar Patel Institute of Technology (SPIT), Mumbai</option>
+                  <option value="K. J. Somaiya College of Engineering (KJSCE), Mumbai">K. J. Somaiya College of Engineering (KJSCE), Mumbai</option>
+                  <option value="Dwarkadas J. Sanghvi College of Engineering (DJSCE), Mumbai">Dwarkadas J. Sanghvi College of Engineering (DJSCE), Mumbai</option>
+                  <option value="Thadomal Shahani Engineering College (TSEC), Mumbai">Thadomal Shahani Engineering College (TSEC), Mumbai</option>
+                  <option value="Fr. Conceicao Rodrigues College of Engineering (CRCE), Mumbai">Fr. Conceicao Rodrigues College of Engineering (CRCE), Mumbai</option>
+                  <option value="VESIT, Chembur, Mumbai">VESIT, Chembur, Mumbai</option>
+                  <option value="Don Bosco Institute of Technology (DBIT), Mumbai">Don Bosco Institute of Technology (DBIT), Mumbai</option>
+                  <option value="NMIMS MPSTME, Mumbai">NMIMS MPSTME, Mumbai</option>
+                  <option value="Fr. C. Rodrigues Institute of Technology (FCRIT), Navi Mumbai">Fr. C. Rodrigues Institute of Technology (FCRIT), Navi Mumbai</option>
+                  <option value="Ramrao Adik Institute of Technology (RAIT), Navi Mumbai">Ramrao Adik Institute of Technology (RAIT), Navi Mumbai</option>
+                  <option value="Smt. Indira Gandhi College of Engineering (SIGCE), Navi Mumbai">Smt. Indira Gandhi College of Engineering (SIGCE), Navi Mumbai</option>
+                  <option value="SIES Graduate School of Technology (SIES GST), Navi Mumbai">SIES Graduate School of Technology (SIES GST), Navi Mumbai</option>
+                  <option value="Terna Engineering College, Navi Mumbai">Terna Engineering College, Navi Mumbai</option>
+                  <option value="Bharati Vidyapeeth College of Engineering (BVCOE), Navi Mumbai">Bharati Vidyapeeth College of Engineering (BVCOE), Navi Mumbai</option>
+                  <option value="Pillai College of Engineering (PCE), Navi Mumbai">Pillai College of Engineering (PCE), Navi Mumbai</option>
+                  <option value="Datta Meghe College of Engineering (DMCE), Navi Mumbai">Datta Meghe College of Engineering (DMCE), Navi Mumbai</option>
+                  <option value="A. C. Patil College of Engineering (ACPCE), Navi Mumbai">A. C. Patil College of Engineering (ACPCE), Navi Mumbai</option>
+                  <option value="A. P. Shah Institute of Technology (APSIT), Thane, Mumbai">A. P. Shah Institute of Technology (APSIT), Thane, Mumbai</option>
                 </select>
               </div>
 
