@@ -25,12 +25,46 @@ import {
   Zap,
   Globe2,
   Cpu,
-  Bot
+  Bot,
+  ArrowLeft
 } from 'lucide-react';
 
 export default function App() {
   const [currentRole, setCurrentRole] = useState('student');
   const [activeTab, setActiveTab] = useState('home');
+  const [navigationHistory, setNavigationHistory] = useState(['home']);
+
+  const tabTitles = {
+    'home': 'Home Overview',
+    'skill-mapping': 'AI Skill Gap Engine',
+    'placements': 'Internships & Drives',
+    'applications': 'ATS Tracker',
+    'mous': 'Corporate MoUs',
+    'profile': 'Career Readiness & Skill Twin',
+    'analytics': 'College Analytics',
+    'admin': 'National Admin Overview'
+  };
+
+  const navigateToTab = (tabId, role = null) => {
+    if (role) setCurrentRole(role);
+    if (tabId !== activeTab) {
+      setNavigationHistory(prev => [...prev, activeTab]);
+      setActiveTab(tabId);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleBack = () => {
+    if (navigationHistory.length > 0) {
+      const prevTab = navigationHistory[navigationHistory.length - 1];
+      setNavigationHistory(prev => prev.slice(0, -1));
+      setActiveTab(prevTab);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      setActiveTab('home');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
 
   // Core Data States
   const [curriculums, setCurriculums] = useState([]);
@@ -73,7 +107,7 @@ export default function App() {
     });
     setSelectedStudent(student);
     setCurrentRole('student');
-    setActiveTab('profile');
+    navigateToTab('profile');
     showToast(message || `Welcome, ${student.name}!`);
   };
 
@@ -339,7 +373,7 @@ export default function App() {
         currentRole={currentRole}
         setCurrentRole={setCurrentRole}
         activeTab={activeTab}
-        setActiveTab={setActiveTab}
+        setActiveTab={navigateToTab}
         selectedStudent={selectedStudent}
         setSelectedStudent={setSelectedStudent}
         students={students}
@@ -348,17 +382,53 @@ export default function App() {
         onOpenResumeModal={() => setIsResumeModalOpen(true)}
         onOpenAuthModal={() => setIsAuthModalOpen(true)}
         onOpenAIInterview={() => setIsAIInterviewOpen(true)}
+        onGoBack={handleBack}
+        canGoBack={activeTab !== 'home'}
       />
 
       {/* Main Container */}
       <main className="flex-1 w-full mx-auto px-4 sm:px-8 lg:px-12 py-6 sm:py-8 space-y-6 relative z-10">
+        {/* Universal Back Navigation & Breadcrumb Header across all sub-views */}
+        {activeTab !== 'home' && (
+          <div className="flex items-center justify-between pb-3.5 mb-2 border-b border-[#E2E8F0] animate-in fade-in duration-200">
+            <div className="flex items-center gap-3">
+              <button
+                onClick={handleBack}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white hover:bg-[#F1F5F9] border border-[#CBD5E1] text-[#0F172A] hover:text-[#7C3AED] font-bold text-xs shadow-2xs transition-all cursor-pointer group"
+                title="Return to previous screen"
+              >
+                <ArrowLeft className="h-4 w-4 text-[#64748B] group-hover:text-[#7C3AED] group-hover:-translate-x-0.5 transition-transform" />
+                <span>Back</span>
+              </button>
+
+              <div className="flex items-center gap-2 text-xs text-[#64748B]">
+                <button
+                  onClick={() => navigateToTab('home')}
+                  className="hover:text-[#7C3AED] font-medium transition cursor-pointer"
+                >
+                  Home
+                </button>
+                <span>/</span>
+                <span className="font-bold text-[#0F172A]">
+                  {tabTitles[activeTab] || activeTab}
+                </span>
+              </div>
+            </div>
+
+            <button
+              onClick={() => navigateToTab('home')}
+              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold text-[#64748B] hover:text-[#7C3AED] hover:bg-[#F5F3FF] transition cursor-pointer"
+            >
+              <Globe2 className="h-3.5 w-3.5" />
+              <span>Back to Home</span>
+            </button>
+          </div>
+        )}
+
         {/* Dynamic View rendering based on activeTab */}
         {activeTab === 'home' && (
           <LandingPage
-            onNavigateTab={(tabId, role) => {
-              if (role) setCurrentRole(role);
-              setActiveTab(tabId);
-            }}
+            onNavigateTab={navigateToTab}
             curriculums={curriculums}
             industryBenchmarks={industryBenchmarks}
             jobs={jobs}
@@ -428,7 +498,7 @@ export default function App() {
             jobs={jobs}
             applications={applications}
             mous={mous}
-            onNavigateToTab={(tab) => setActiveTab(tab)}
+            onNavigateToTab={(tab) => navigateToTab(tab)}
           />
         )}
 

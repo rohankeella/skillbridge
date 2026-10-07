@@ -255,23 +255,7 @@ export default function LandingPage({
                 className="flex items-center gap-2 rounded-2xl bg-white hover:bg-[#F8FAFC] px-6 sm:px-7 py-3.5 text-sm font-bold text-[#0F172A] border border-[#CBD5E1] transition-all shadow-xs hover:border-[#7C3AED] cursor-pointer"
               >
                 <Briefcase className="h-4 w-4 text-[#0284C7]" />
-                <span>Explore Campus Drives ({totalJobsCount})</span>
-              </button>
-
-              <button
-                onClick={onOpenAuthModal}
-                className="flex items-center gap-2 rounded-2xl bg-gradient-to-r from-[#7C3AED] to-[#6D28D9] hover:from-[#6D28D9] hover:to-[#5B21B6] px-5 sm:px-6 py-3.5 text-sm font-extrabold text-white transition-all shadow-md shadow-[#7C3AED]/25 cursor-pointer"
-              >
-                <LogIn className="h-4.5 w-4.5" />
-                <span>Student Register & Login</span>
-              </button>
-
-              <button
-                onClick={onOpenAICoach}
-                className="flex items-center gap-2 rounded-2xl bg-[#F0F9FF] hover:bg-[#E0F2FE] px-5 sm:px-6 py-3.5 text-sm font-bold text-[#0284C7] border border-[#BAE6FD] transition-all shadow-xs cursor-pointer"
-              >
-                <Bot className="h-4.5 w-4.5 text-[#0284C7]" />
-                <span>Try AI Career Coach</span>
+                <span>Explore Campus Drives & Internships ({totalJobsCount})</span>
               </button>
             </div>
 

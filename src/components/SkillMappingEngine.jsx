@@ -84,18 +84,10 @@ export default function SkillMappingEngine({
           <div className="flex flex-wrap items-center gap-3">
             <button
               onClick={onOpenCustomScanner}
-              className="flex items-center gap-2 rounded-2xl bg-white hover:bg-[#F8FAFC] px-4 sm:px-5 py-3 text-xs font-bold text-[#0F172A] border border-[#CBD5E1] transition-all shadow-xs hover:border-[#7C3AED] cursor-pointer"
+              className="flex items-center gap-2 rounded-2xl bg-white hover:bg-[#F8FAFC] px-5 py-3 text-xs font-bold text-[#0F172A] border border-[#CBD5E1] transition-all shadow-xs hover:border-[#7C3AED] cursor-pointer"
             >
               <FileSpreadsheet className="h-4 w-4 text-[#0284C7]" />
               <span>Paste Custom Syllabus</span>
-            </button>
-            <button
-              onClick={() => onRunGapAnalysis(selectedCurriculumId, selectedIndustryId)}
-              disabled={loading}
-              className="flex items-center gap-2 rounded-2xl bg-[#7C3AED] hover:bg-[#6D28D9] px-5 sm:px-6 py-3 text-xs font-extrabold text-white shadow-md shadow-[#7C3AED]/25 transition-all disabled:opacity-50 hover:scale-102 cursor-pointer"
-            >
-              <Cpu className="h-4 w-4" />
-              <span>{loading ? 'Evaluating Vectors...' : 'Recalculate AI Match'}</span>
             </button>
           </div>
         </div>

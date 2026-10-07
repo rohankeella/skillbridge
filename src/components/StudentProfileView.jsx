@@ -16,7 +16,8 @@ import {
   ShieldCheck,
   Check,
   FileText,
-  Bot
+  Bot,
+  ArrowLeft
 } from 'lucide-react';
 import CareerReadinessCard from './CareerReadinessCard';
 import VisualRoadmap from './VisualRoadmap';
@@ -77,7 +78,7 @@ export default function StudentProfileView({
             </div>
           </div>
 
-          {/* Quick Profile Actions */}
+          {/* Quick Profile Actions (Streamlined) */}
           <div className="flex flex-wrap items-center gap-3 w-full md:w-auto">
             <button
               onClick={onOpenResumeModal}
@@ -92,13 +93,6 @@ export default function StudentProfileView({
             >
               <Bot className="h-4 w-4 text-[#16A34A]" />
               <span>AI Mock Interview 🎙️</span>
-            </button>
-            <button
-              onClick={onOpenAICoach}
-              className="flex items-center gap-2 rounded-2xl bg-[#7C3AED] hover:bg-[#6D28D9] px-4 py-2.5 text-xs font-extrabold text-white shadow-md shadow-[#7C3AED]/25 transition hover:scale-102 cursor-pointer"
-            >
-              <Sparkles className="h-4 w-4" />
-              <span>Ask AI Coach</span>
             </button>
           </div>
         </div>
@@ -115,39 +109,51 @@ export default function StudentProfileView({
       />
 
       {/* Sub navigation between Overview, Interactive Roadmap, and Digital Skill Twin Loop */}
-      <div className="flex flex-wrap items-center gap-2 border-b border-[#E2E8F0] pb-2">
-        <button
-          onClick={() => setActiveProfileTab('overview')}
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition cursor-pointer ${
-            activeProfileTab === 'overview'
-              ? 'bg-[#F5F3FF] text-[#6D28D9] border border-[#DDD6FE] shadow-xs'
-              : 'text-[#64748B] hover:text-[#0F172A]'
-          }`}
-        >
-          Competency & Skill Badges
-        </button>
-        <button
-          onClick={() => setActiveProfileTab('roadmap')}
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
-            activeProfileTab === 'roadmap'
-              ? 'bg-[#F5F3FF] text-[#6D28D9] border border-[#DDD6FE] shadow-xs'
-              : 'text-[#64748B] hover:text-[#0F172A]'
-          }`}
-        >
-          <Sparkles className="h-3.5 w-3.5 text-[#7C3AED]" />
-          <span>Interactive 5-State Learning Roadmap</span>
-        </button>
-        <button
-          onClick={() => setActiveProfileTab('twin-loop')}
-          className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
-            activeProfileTab === 'twin-loop'
-              ? 'bg-[#F5F3FF] text-[#6D28D9] border border-[#DDD6FE] shadow-xs'
-              : 'text-[#64748B] hover:text-[#0F172A]'
-          }`}
-        >
-          <Cpu className="h-3.5 w-3.5 text-[#7C3AED]" />
-          <span>Digital Skill Twin & Loop Flow 🔄</span>
-        </button>
+      <div className="flex flex-wrap items-center justify-between gap-2 border-b border-[#E2E8F0] pb-2">
+        <div className="flex flex-wrap items-center gap-2">
+          {activeProfileTab !== 'overview' && (
+            <button
+              onClick={() => setActiveProfileTab('overview')}
+              className="px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 bg-white hover:bg-[#F1F5F9] border border-[#CBD5E1] text-[#0F172A] shadow-2xs cursor-pointer group"
+              title="Return to Competency & Skill Badges"
+            >
+              <ArrowLeft className="h-3.5 w-3.5 text-[#64748B] group-hover:-translate-x-0.5 transition-transform" />
+              <span>Back</span>
+            </button>
+          )}
+          <button
+            onClick={() => setActiveProfileTab('overview')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition cursor-pointer ${
+              activeProfileTab === 'overview'
+                ? 'bg-[#F5F3FF] text-[#6D28D9] border border-[#DDD6FE] shadow-xs'
+                : 'text-[#64748B] hover:text-[#0F172A]'
+            }`}
+          >
+            Competency & Skill Badges
+          </button>
+          <button
+            onClick={() => setActiveProfileTab('roadmap')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
+              activeProfileTab === 'roadmap'
+                ? 'bg-[#F5F3FF] text-[#6D28D9] border border-[#DDD6FE] shadow-xs'
+                : 'text-[#64748B] hover:text-[#0F172A]'
+            }`}
+          >
+            <Sparkles className="h-3.5 w-3.5 text-[#7C3AED]" />
+            <span>Interactive 5-State Learning Roadmap</span>
+          </button>
+          <button
+            onClick={() => setActiveProfileTab('twin-loop')}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
+              activeProfileTab === 'twin-loop'
+                ? 'bg-[#F5F3FF] text-[#6D28D9] border border-[#DDD6FE] shadow-xs'
+                : 'text-[#64748B] hover:text-[#0F172A]'
+            }`}
+          >
+            <Cpu className="h-3.5 w-3.5 text-[#7C3AED]" />
+            <span>Digital Skill Twin & Loop Flow 🔄</span>
+          </button>
+        </div>
       </div>
 
       {activeProfileTab === 'overview' && (

@@ -16,7 +16,8 @@ import {
   Shield,
   FileText,
   Bot,
-  LogIn
+  LogIn,
+  ArrowLeft
 } from 'lucide-react';
 
 export default function Navbar({ 
@@ -31,7 +32,9 @@ export default function Navbar({
   onOpenAICoach,
   onOpenResumeModal,
   onOpenAuthModal,
-  onOpenAIInterview
+  onOpenAIInterview,
+  onGoBack,
+  canGoBack
 }) {
   // SIH Section 3 & 23: 4 Main Roles: Student, College, Industry, Admin
   const roles = [
@@ -104,34 +107,6 @@ export default function Navbar({
           </div>
 
           <div className="flex items-center gap-3">
-            {/* AI Assistant Quick Trigger */}
-            <button
-              onClick={onOpenAICoach}
-              className="flex items-center gap-1.5 bg-[#F5F3FF] hover:bg-[#EDE9FE] border border-[#DDD6FE] text-[#6D28D9] px-3 py-0.5 rounded-full text-[11px] font-bold transition shadow-xs cursor-pointer"
-            >
-              <Sparkles className="h-3 w-3 text-[#7C3AED]" />
-              <span>Ask SkillBridge AI ✨</span>
-            </button>
-
-            {currentRole === 'student' && (
-              <>
-                <button
-                  onClick={onOpenResumeModal}
-                  className="hidden sm:flex items-center gap-1.5 bg-[#F0F9FF] hover:bg-[#E0F2FE] border border-[#BAE6FD] text-[#0369A1] px-2.5 py-0.5 rounded-full text-[11px] font-bold transition cursor-pointer"
-                >
-                  <FileText className="h-3 w-3 text-[#0284C7]" />
-                  <span>Resume AI</span>
-                </button>
-                <button
-                  onClick={onOpenAIInterview}
-                  className="hidden md:flex items-center gap-1.5 bg-[#F0FDF4] hover:bg-[#DCFCE7] border border-[#BBF7D0] text-[#15803D] px-2.5 py-0.5 rounded-full text-[11px] font-bold transition cursor-pointer"
-                >
-                  <Bot className="h-3 w-3 text-[#16A34A]" />
-                  <span>AI Interview 🎙️</span>
-                </button>
-              </>
-            )}
-
             {currentRole === 'student' && students.length > 0 && (
               <div className="flex items-center gap-1.5 bg-white px-2.5 py-0.5 rounded-full border border-[#E2E8F0] shadow-xs">
                 <span className="text-[#64748B] text-[11px]">Active:</span>
@@ -224,7 +199,17 @@ export default function Navbar({
 
       {/* Navigation Tabs Bar */}
       <div className="flex w-full overflow-x-auto px-4 sm:px-8 lg:px-12">
-        <nav className="flex space-x-1.5 border-t border-[#E2E8F0] pt-1.5 pb-2.5">
+        <nav className="flex items-center space-x-1.5 border-t border-[#E2E8F0] pt-1.5 pb-2.5">
+          {activeTab !== 'home' && onGoBack && (
+            <button
+              onClick={onGoBack}
+              className="flex items-center gap-1.5 px-3 py-2 text-xs font-bold rounded-xl text-[#0F172A] bg-white hover:bg-[#F1F5F9] border border-[#CBD5E1] hover:border-[#7C3AED] shadow-2xs transition-all cursor-pointer shrink-0 group mr-1"
+              title="Return to previous screen"
+            >
+              <ArrowLeft className="h-3.5 w-3.5 text-[#64748B] group-hover:text-[#7C3AED] group-hover:-translate-x-0.5 transition-transform" />
+              <span>Back</span>
+            </button>
+          )}
           {tabs
             .filter(tab => !tab.roleReq || tab.roleReq === currentRole)
             .map((tab) => {
