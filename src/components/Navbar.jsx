@@ -100,10 +100,6 @@ export default function Navbar({
               </span>
               <span className="text-[#0F172A] font-semibold tracking-wide">National Career Grid Active</span>
             </div>
-            <span className="hidden md:inline text-[#CBD5E1]">•</span>
-            <span className="hidden md:inline text-[#64748B] text-[11px] font-mono">
-              MongoDB + AI Competency Recommendation Engine Online
-            </span>
           </div>
 
           <div className="flex items-center gap-3">
