@@ -40,9 +40,15 @@ export default function CareerReadinessCard({
 
   const roles = [
     'Full Stack Developer',
-    'AI / ML Engineer',
-    'Cloud DevOps Architect',
-    'Cybersecurity Analyst'
+    'Cloud & DevOps Engineer',
+    'AI / Machine Learning Engineer',
+    'Cybersecurity & Ethical Hacking Specialist',
+    'Big Data Engineer & Pipeline Architect',
+    'Mobile App Developer (iOS, Android & Flutter)',
+    'Embedded Systems & IoT Hardware Engineer',
+    'Blockchain & Web3 Smart Contract Engineer',
+    'UI/UX & Product Design Technologist',
+    'Site Reliability Engineer (SRE)'
   ];
 
   return (

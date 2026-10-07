@@ -429,9 +429,13 @@ export default function StudentAuthModal({
                 <option value="Full Stack Developer">Full Stack Developer</option>
                 <option value="Cloud & DevOps Engineer">Cloud & DevOps Engineer</option>
                 <option value="AI / Machine Learning Engineer">AI / Machine Learning Engineer</option>
-                <option value="Cybersecurity Analyst">Cybersecurity Analyst</option>
-                <option value="Frontend Engineer">Frontend Engineer</option>
-                <option value="Data Scientist">Data Scientist</option>
+                <option value="Cybersecurity & Ethical Hacking Specialist">Cybersecurity & Ethical Hacking Specialist</option>
+                <option value="Big Data Engineer & Pipeline Architect">Big Data Engineer & Pipeline Architect</option>
+                <option value="Mobile App Developer (iOS, Android & Flutter)">Mobile App Developer (iOS, Android & Flutter)</option>
+                <option value="Embedded Systems & IoT Hardware Engineer">Embedded Systems & IoT Hardware Engineer</option>
+                <option value="Blockchain & Web3 Smart Contract Engineer">Blockchain & Web3 Smart Contract Engineer</option>
+                <option value="UI/UX & Product Design Technologist">UI/UX & Product Design Technologist</option>
+                <option value="Site Reliability Engineer (SRE)">Site Reliability Engineer (SRE)</option>
               </select>
             </div>
 

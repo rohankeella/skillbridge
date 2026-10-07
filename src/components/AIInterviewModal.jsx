@@ -51,6 +51,42 @@ const interviewBanks = {
       hints: 'Mention chunking strategies with metadata, semantic rerankers (Cohere/BGE), contextual compression, and RAGAS evaluation metrics.',
       sampleAnswer: 'I employ semantic chunking with overlapping windows and dense embeddings. Retrieved top-20 documents are passed through a cross-encoder reranker to extract top-3 relevant contexts. We evaluate context precision and faithfulness using the RAGAS framework.'
     }
+  ],
+  'Cybersecurity & Ethical Hacking': [
+    {
+      id: 'q1',
+      round: 'Threat Modeling & AppSec',
+      question: 'How would you conduct an automated threat model for a federated microservices cluster, prevent JWT privilege escalation attacks, and enforce Zero Trust network policies?',
+      hints: 'Discuss STRIDE framework, RS256 algorithm enforcement, key rotation, mTLS via Istio Service Mesh, and Cilium eBPF network policies.',
+      sampleAnswer: 'I follow STRIDE modeling during CI/CD review. For JWTs, we enforce asymmetric RS256 with JWKS endpoint verification, rejecting "none" algorithms and verifying issuer/audience claims. For Zero Trust, we enforce mTLS with SPIFFE/SPIRE IDs and strict default-deny eBPF policies.'
+    }
+  ],
+  'Big Data & Pipeline Architect': [
+    {
+      id: 'q1',
+      round: 'Distributed Processing & Streaming',
+      question: 'How do you architect an exactly-once streaming data pipeline consuming 100,000 events/sec from Apache Kafka into a Delta Lakehouse with automated schema evolution?',
+      hints: 'Cover Kafka consumer offsets, Spark Structured Streaming checkpointing with Write-Ahead Logs (WAL), idempotency, and schema enforcement.',
+      sampleAnswer: 'I utilize Spark Structured Streaming with transactional commit logs to Delta Lake. Kafka offsets are recorded alongside Delta ACID transactions in the checkpoint directory to guarantee exactly-once semantics, enabling mergeSchema=true for backwards-compatible schema evolution.'
+    }
+  ],
+  'Mobile App Developer': [
+    {
+      id: 'q1',
+      round: 'Mobile Architecture & Offline Sync',
+      question: 'How do you architect an offline-first mobile application in Flutter or React Native that synchronizes conflict-prone client edits with a central GraphQL server?',
+      hints: 'Discuss local SQLite/WatermelonDB/Hive storage, Conflict-Free Replicated Data Types (CRDTs), last-write-wins vs server reconciliation, and background workers.',
+      sampleAnswer: 'We adopt an offline-first cache using local SQLite with an event-sourcing outbox queue. Mutations made offline are stamped with vector clocks and synced via background sync jobs. Conflicts are resolved via deterministic CRDT rules or server-side three-way diffing.'
+    }
+  ],
+  'Site Reliability Engineer (SRE)': [
+    {
+      id: 'q1',
+      round: 'Resilience Engineering & Chaos Testing',
+      question: 'How do you define SLOs, error budgets, and implement automated circuit breakers and chaos engineering tests to ensure 99.99% availability for a payments gateway?',
+      hints: 'Discuss Burn rate alerts, Envoy/Resilience4j circuit breakers, Chaos Mesh/Gremlin fault injection, and automated blue-green traffic shunting.',
+      sampleAnswer: 'We set our SLO at 99.99% availability over a 30-day rolling window. Alerting uses multiwindow multi-burn-rate algorithms. We configure Resilience4j circuit breakers to fail-fast on downstream processor timeouts, and continuously inject network latency using Chaos Mesh in staging.'
+    }
   ]
 };
 
@@ -177,6 +213,10 @@ export default function AIInterviewModal({
                     <option value="Full-Stack Developer">Full-Stack Developer</option>
                     <option value="Cloud & DevOps Engineer">Cloud & DevOps Engineer</option>
                     <option value="AI / ML & Data Science">AI / ML & Data Science</option>
+                    <option value="Cybersecurity & Ethical Hacking">Cybersecurity & Ethical Hacking</option>
+                    <option value="Big Data & Pipeline Architect">Big Data & Pipeline Architect</option>
+                    <option value="Mobile App Developer">Mobile App Developer</option>
+                    <option value="Site Reliability Engineer (SRE)">Site Reliability Engineer (SRE)</option>
                   </select>
                 </div>
 

@@ -66,6 +66,118 @@ const initialBenchmarks = [
       { name: 'Feature Engineering & Data Pipelines', weight: 89, category: 'Data' }
     ],
     emergingTrends: ['Autonomous Agents', 'Multimodal LLMs', 'Edge AI', 'AI Safety & Evaluation']
+  },
+  {
+    id: 'ind-cybersecurity',
+    role: 'Cybersecurity & Ethical Hacking Specialist',
+    category: 'Cybersecurity & SecOps',
+    demandScore: 97,
+    avgSalary: '$92k - $148k / ₹16 - 28 LPA',
+    keySkills: [
+      { name: 'Network Security & Penetration Testing', weight: 96, category: 'Offensive Security' },
+      { name: 'OWASP Top 10 & AppSec Auditing', weight: 94, category: 'Application Security' },
+      { name: 'Linux Hardening & Burp Suite', weight: 92, category: 'Tools' },
+      { name: 'SIEM & SOC Threat Hunting (Splunk)', weight: 88, category: 'Defensive Security' },
+      { name: 'Applied Cryptography & PKI', weight: 85, category: 'Security Architecture' },
+      { name: 'Cloud Security Posture (CSPM)', weight: 90, category: 'Cloud Security' }
+    ],
+    emergingTrends: ['Zero Trust Architecture', 'AI Threat Defense', 'DevSecOps Automation', 'Identity & Access Management (IAM)']
+  },
+  {
+    id: 'ind-data-eng',
+    role: 'Big Data Engineer & Pipeline Architect',
+    category: 'Data Engineering',
+    demandScore: 94,
+    avgSalary: '$90k - $138k / ₹15 - 26 LPA',
+    keySkills: [
+      { name: 'Apache Spark & Distributed Computing', weight: 95, category: 'Big Data' },
+      { name: 'SQL & Data Warehousing (Snowflake/BigQuery)', weight: 94, category: 'Databases' },
+      { name: 'Apache Kafka & Real-Time Streaming', weight: 90, category: 'Streaming' },
+      { name: 'dbt & Modern Data Modeling', weight: 88, category: 'Analytics Engineering' },
+      { name: 'Python & PySpark ETL Pipelines', weight: 92, category: 'ETL' },
+      { name: 'Apache Airflow Pipeline Orchestration', weight: 87, category: 'Workflow Automation' }
+    ],
+    emergingTrends: ['Apache Iceberg Lakehouses', 'Real-time Streaming Analytics', 'Data Mesh Architecture', 'Vector ETL for GenAI']
+  },
+  {
+    id: 'ind-mobile-dev',
+    role: 'Mobile App Developer (iOS, Android & Flutter)',
+    category: 'Mobile Engineering',
+    demandScore: 92,
+    avgSalary: '$80k - $125k / ₹12 - 22 LPA',
+    keySkills: [
+      { name: 'Flutter & Dart Cross-Platform', weight: 94, category: 'Frameworks' },
+      { name: 'React Native Mobile Architecture', weight: 92, category: 'Frameworks' },
+      { name: 'Native iOS (Swift) / Android (Kotlin)', weight: 88, category: 'Native Core' },
+      { name: 'Mobile REST & GraphQL Client Integration', weight: 90, category: 'Networking' },
+      { name: 'Offline-First SQLite & Room Persistence', weight: 85, category: 'Storage' },
+      { name: 'App Store & Play Store CI/CD Deployment', weight: 86, category: 'DevOps' }
+    ],
+    emergingTrends: ['Kotlin Multiplatform (KMP)', 'On-Device AI/ML Models', 'Fluid Micro-Interactions', 'Dynamic Island & Spatial UI']
+  },
+  {
+    id: 'ind-embedded-iot',
+    role: 'Embedded Systems & IoT Hardware Engineer',
+    category: 'Hardware & Embedded Systems',
+    demandScore: 91,
+    avgSalary: '$82k - $128k / ₹12 - 24 LPA',
+    keySkills: [
+      { name: 'Embedded C / C++ Firmware Development', weight: 96, category: 'Firmware' },
+      { name: 'Real-Time Operating Systems (FreeRTOS)', weight: 92, category: 'RTOS' },
+      { name: 'Microcontroller Protocols (I2C, SPI, UART, CAN)', weight: 90, category: 'Hardware Interfacing' },
+      { name: 'MQTT, BLE & IoT Wireless Networking', weight: 88, category: 'IoT' },
+      { name: 'PCB Schematic Design & Hardware Debugging', weight: 85, category: 'Hardware' },
+      { name: 'Linux Kernel & Embedded Device Drivers', weight: 87, category: 'Systems' }
+    ],
+    emergingTrends: ['TinyML on Microcontrollers', 'Matter Protocol', 'LoRaWAN Low-Power Networking', 'Edge Robotics Control']
+  },
+  {
+    id: 'ind-blockchain',
+    role: 'Blockchain & Web3 Smart Contract Engineer',
+    category: 'Distributed Systems & FinTech',
+    demandScore: 89,
+    avgSalary: '$105k - $160k / ₹16 - 32 LPA',
+    keySkills: [
+      { name: 'Solidity Smart Contracts & Hardhat', weight: 95, category: 'Smart Contracts' },
+      { name: 'Ethereum Virtual Machine (EVM) Architecture', weight: 91, category: 'Blockchain Core' },
+      { name: 'Rust & Solana Program Development', weight: 92, category: 'High-Throughput Chains' },
+      { name: 'Web3.js / Ethers.js Frontend Integration', weight: 88, category: 'Web3 Client' },
+      { name: 'Smart Contract Security Auditing & Verification', weight: 93, category: 'Security' },
+      { name: 'Decentralized Storage (IPFS/Arweave)', weight: 84, category: 'Infrastructure' }
+    ],
+    emergingTrends: ['Zero-Knowledge Proofs (ZK-Rollups)', 'Account Abstraction (ERC-4337)', 'Real-World Asset (RWA) Tokenization', 'Cross-Chain Bridges']
+  },
+  {
+    id: 'ind-uiux-design',
+    role: 'UI/UX & Product Design Technologist',
+    category: 'Design Engineering',
+    demandScore: 90,
+    avgSalary: '$75k - $120k / ₹11 - 20 LPA',
+    keySkills: [
+      { name: 'Figma Token-Based Design Systems', weight: 95, category: 'Design Systems' },
+      { name: 'Modern Responsive CSS & Tailwind Architecture', weight: 94, category: 'UI Development' },
+      { name: 'User Journey Mapping & Wireframing', weight: 90, category: 'UX Strategy' },
+      { name: 'Web Accessibility & WCAG 2.1 Compliance', weight: 88, category: 'Accessibility' },
+      { name: 'Interactive Micro-Animations (Framer Motion)', weight: 87, category: 'Motion Design' },
+      { name: 'Usability A/B Testing & User Research', weight: 85, category: 'Research' }
+    ],
+    emergingTrends: ['AI Design Co-Pilots', 'Spatial UI / VisionOS', 'Headless Component Libraries', 'Micro-copywriting']
+  },
+  {
+    id: 'ind-sre',
+    role: 'Site Reliability Engineer (SRE) & Systems Architect',
+    category: 'Infrastructure & Reliability',
+    demandScore: 95,
+    avgSalary: '$100k - $150k / ₹16 - 28 LPA',
+    keySkills: [
+      { name: 'Service Level Objectives (SLOs, SLIs, SLAs)', weight: 95, category: 'SRE Principles' },
+      { name: 'Distributed Tracing & OpenTelemetry', weight: 93, category: 'Observability' },
+      { name: 'Chaos Engineering & Fault Injection', weight: 89, category: 'Resilience' },
+      { name: 'Incident Response & Post-Mortem Facilitation', weight: 90, category: 'Operations' },
+      { name: 'Go / Python Automation & CLI Tooling', weight: 91, category: 'Automation' },
+      { name: 'High-Availability Database Clustering', weight: 88, category: 'Systems' }
+    ],
+    emergingTrends: ['AI Incident Copilots', 'Automated Remediation Runbooks', 'eBPF Kernel Observability', 'Multi-Cloud Disaster Recovery']
   }
 ];
 
