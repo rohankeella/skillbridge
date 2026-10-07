@@ -15,15 +15,18 @@ import {
   Cpu,
   ShieldCheck,
   Check,
-  FileText
+  FileText,
+  Bot
 } from 'lucide-react';
 import CareerReadinessCard from './CareerReadinessCard';
 import VisualRoadmap from './VisualRoadmap';
+import SkillBridgeArchitectureFlow from './SkillBridgeArchitectureFlow';
 
 export default function StudentProfileView({ 
   student, 
   onOpenResumeModal,
-  onOpenAICoach 
+  onOpenAICoach,
+  onOpenAIInterview
 }) {
   const [targetRole, setTargetRole] = useState(student?.targetRole || 'Full Stack Developer');
   const [activeProfileTab, setActiveProfileTab] = useState('overview');
@@ -84,6 +87,13 @@ export default function StudentProfileView({
               <span>Sync Resume AI</span>
             </button>
             <button
+              onClick={onOpenAIInterview}
+              className="flex items-center gap-2 rounded-2xl bg-[#F0FDF4] hover:bg-[#DCFCE7] border border-[#BBF7D0] px-4 py-2.5 text-xs font-bold text-[#15803D] transition shadow-xs cursor-pointer"
+            >
+              <Bot className="h-4 w-4 text-[#16A34A]" />
+              <span>AI Mock Interview 🎙️</span>
+            </button>
+            <button
               onClick={onOpenAICoach}
               className="flex items-center gap-2 rounded-2xl bg-[#7C3AED] hover:bg-[#6D28D9] px-4 py-2.5 text-xs font-extrabold text-white shadow-md shadow-[#7C3AED]/25 transition hover:scale-102 cursor-pointer"
             >
@@ -104,8 +114,8 @@ export default function StudentProfileView({
         onOpenAICoach={onOpenAICoach}
       />
 
-      {/* Sub navigation between Overview and Interactive Roadmap */}
-      <div className="flex items-center space-x-2 border-b border-[#E2E8F0] pb-2">
+      {/* Sub navigation between Overview, Interactive Roadmap, and Digital Skill Twin Loop */}
+      <div className="flex flex-wrap items-center gap-2 border-b border-[#E2E8F0] pb-2">
         <button
           onClick={() => setActiveProfileTab('overview')}
           className={`px-4 py-2 rounded-xl text-xs font-bold transition cursor-pointer ${
@@ -126,6 +136,17 @@ export default function StudentProfileView({
         >
           <Sparkles className="h-3.5 w-3.5 text-[#7C3AED]" />
           <span>Interactive 5-State Learning Roadmap</span>
+        </button>
+        <button
+          onClick={() => setActiveProfileTab('twin-loop')}
+          className={`px-4 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
+            activeProfileTab === 'twin-loop'
+              ? 'bg-[#F5F3FF] text-[#6D28D9] border border-[#DDD6FE] shadow-xs'
+              : 'text-[#64748B] hover:text-[#0F172A]'
+          }`}
+        >
+          <Cpu className="h-3.5 w-3.5 text-[#7C3AED]" />
+          <span>Digital Skill Twin & Loop Flow 🔄</span>
         </button>
       </div>
 
@@ -206,6 +227,17 @@ export default function StudentProfileView({
       {activeProfileTab === 'roadmap' && (
         <div className="animate-in fade-in duration-200">
           <VisualRoadmap targetRole={targetRole} />
+        </div>
+      )}
+
+      {activeProfileTab === 'twin-loop' && (
+        <div className="animate-in fade-in duration-200">
+          <SkillBridgeArchitectureFlow
+            selectedStudent={student}
+            onOpenAIInterview={onOpenAIInterview}
+            onOpenAICoach={onOpenAICoach}
+            onOpenResumeModal={onOpenResumeModal}
+          />
         </div>
       )}
     </div>

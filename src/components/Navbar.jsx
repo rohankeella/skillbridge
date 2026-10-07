@@ -30,7 +30,8 @@ export default function Navbar({
   applicationCount = 0,
   onOpenAICoach,
   onOpenResumeModal,
-  onOpenAuthModal
+  onOpenAuthModal,
+  onOpenAIInterview
 }) {
   // SIH Section 3 & 23: 4 Main Roles: Student, College, Industry, Admin
   const roles = [
@@ -113,13 +114,22 @@ export default function Navbar({
             </button>
 
             {currentRole === 'student' && (
-              <button
-                onClick={onOpenResumeModal}
-                className="hidden sm:flex items-center gap-1.5 bg-[#F0F9FF] hover:bg-[#E0F2FE] border border-[#BAE6FD] text-[#0369A1] px-2.5 py-0.5 rounded-full text-[11px] font-bold transition cursor-pointer"
-              >
-                <FileText className="h-3 w-3 text-[#0284C7]" />
-                <span>Resume AI</span>
-              </button>
+              <>
+                <button
+                  onClick={onOpenResumeModal}
+                  className="hidden sm:flex items-center gap-1.5 bg-[#F0F9FF] hover:bg-[#E0F2FE] border border-[#BAE6FD] text-[#0369A1] px-2.5 py-0.5 rounded-full text-[11px] font-bold transition cursor-pointer"
+                >
+                  <FileText className="h-3 w-3 text-[#0284C7]" />
+                  <span>Resume AI</span>
+                </button>
+                <button
+                  onClick={onOpenAIInterview}
+                  className="hidden md:flex items-center gap-1.5 bg-[#F0FDF4] hover:bg-[#DCFCE7] border border-[#BBF7D0] text-[#15803D] px-2.5 py-0.5 rounded-full text-[11px] font-bold transition cursor-pointer"
+                >
+                  <Bot className="h-3 w-3 text-[#16A34A]" />
+                  <span>AI Interview 🎙️</span>
+                </button>
+              </>
             )}
 
             {currentRole === 'student' && students.length > 0 && (

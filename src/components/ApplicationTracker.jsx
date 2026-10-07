@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   FileCheck2, 
   Clock, 
@@ -12,14 +12,21 @@ import {
   User,
   GraduationCap,
   Calendar,
-  Zap
+  Zap,
+  MessageSquare,
+  Cpu,
+  RefreshCw
 } from 'lucide-react';
 
 export default function ApplicationTracker({ 
   applications = [], 
   currentRole, 
-  onUpdateStatus 
+  onUpdateStatus,
+  onIndustryFeedback
 }) {
+  const [activeFeedbackAppId, setActiveFeedbackAppId] = useState(null);
+  const [feedbackScore, setFeedbackScore] = useState(9);
+  const [feedbackText, setFeedbackText] = useState('Demonstrated deep hands-on expertise in backend microservices & system design during live technical assessment.');
   return (
     <div className="space-y-6">
       {/* Header Banner */}
@@ -172,9 +179,68 @@ export default function ApplicationTracker({
                       >
                         Extend Offer
                       </button>
+                      <button
+                        onClick={() => setActiveFeedbackAppId(activeFeedbackAppId === app.id ? null : app.id)}
+                        className="bg-[#F5F3FF] hover:bg-[#EDE9FE] border border-[#DDD6FE] text-[#6D28D9] px-3 py-1.5 rounded-xl text-xs font-extrabold transition shadow-xs flex items-center gap-1 cursor-pointer"
+                      >
+                        <RefreshCw className="h-3.5 w-3.5 text-[#7C3AED]" />
+                        <span>Industry Feedback ➔ Skill Twin</span>
+                      </button>
                     </div>
                   )}
                 </div>
+
+                {/* Closed Loop: Recruiter Feedback Form */}
+                {activeFeedbackAppId === app.id && (
+                  <div className="mt-4 p-4 rounded-2xl bg-[#F8FAFC] border border-[#DDD6FE] space-y-3 animate-in fade-in text-xs">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2 font-bold text-[#6D28D9]">
+                        <Cpu className="h-4 w-4 text-[#7C3AED]" />
+                        <span>Closed Loop Feedback Engine: Update {app.studentName}'s Skill Twin</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-[#64748B]">Rating:</span>
+                        <select
+                          value={feedbackScore}
+                          onChange={(e) => setFeedbackScore(Number(e.target.value))}
+                          className="bg-white border border-[#CBD5E1] rounded-lg px-2 py-1 font-bold text-[#7C3AED]"
+                        >
+                          <option value={10}>10/10 • Outstanding</option>
+                          <option value={9}>9/10 • Strong Fit</option>
+                          <option value={8}>8/10 • Competent</option>
+                          <option value={7}>7/10 • Needs Minor Upskilling</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <textarea
+                      value={feedbackText}
+                      onChange={(e) => setFeedbackText(e.target.value)}
+                      rows={2}
+                      className="w-full bg-white border border-[#CBD5E1] rounded-xl p-3 text-xs text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#7C3AED]"
+                      placeholder="Write evaluation scorecard notes to be synchronized to candidate's verified Skill Twin..."
+                    />
+
+                    <div className="flex justify-end gap-2">
+                      <button
+                        onClick={() => setActiveFeedbackAppId(null)}
+                        className="px-3 py-1.5 rounded-xl bg-white border border-[#CBD5E1] text-[#64748B] hover:text-[#0F172A] font-medium cursor-pointer"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        onClick={() => {
+                          if (onIndustryFeedback) onIndustryFeedback(app.id, feedbackText, feedbackScore);
+                          setActiveFeedbackAppId(null);
+                        }}
+                        className="px-4 py-1.5 rounded-xl bg-[#7C3AED] hover:bg-[#6D28D9] text-white font-bold flex items-center gap-1.5 shadow-sm cursor-pointer"
+                      >
+                        <RefreshCw className="h-3 w-3" />
+                        <span>Submit Feedback & Update Candidate Skill Twin</span>
+                      </button>
+                    </div>
+                  </div>
+                )}
               </div>
             );
           })

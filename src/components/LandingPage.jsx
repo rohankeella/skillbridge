@@ -26,6 +26,7 @@ import {
   ChevronRight,
   LogIn
 } from 'lucide-react';
+import SkillBridgeArchitectureFlow from './SkillBridgeArchitectureFlow';
 
 export default function LandingPage({ 
   onNavigateTab, 
@@ -35,7 +36,9 @@ export default function LandingPage({
   mous = [], 
   onOpenAICoach,
   onOpenResumeModal,
-  onOpenAuthModal
+  onOpenAuthModal,
+  onOpenAIInterview,
+  selectedStudent
 }) {
   const [selectedDemoRole, setSelectedDemoRole] = useState('student');
   const [activeFaq, setActiveFaq] = useState(null);
@@ -484,6 +487,17 @@ export default function LandingPage({
             </div>
           </div>
         </div>
+      </section>
+
+      {/* Complete Architecture & Closed-Loop Engine */}
+      <section className="space-y-6">
+        <SkillBridgeArchitectureFlow
+          onNavigateTab={onNavigateTab}
+          onOpenAIInterview={onOpenAIInterview}
+          onOpenAICoach={onOpenAICoach}
+          onOpenResumeModal={onOpenResumeModal}
+          selectedStudent={selectedStudent}
+        />
       </section>
 
       {/* 4-Step Technical Pipeline Flow */}

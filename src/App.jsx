@@ -14,6 +14,7 @@ import ResumeParserModal from './components/ResumeParserModal';
 import AICareerCoachDrawer from './components/AICareerCoachDrawer';
 import LandingPage from './components/LandingPage';
 import StudentAuthModal from './components/StudentAuthModal';
+import AIInterviewModal from './components/AIInterviewModal';
 import { 
   Sparkles, 
   CheckCircle2, 
@@ -54,6 +55,7 @@ export default function App() {
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
   const [isAICoachOpen, setIsAICoachOpen] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [isAIInterviewOpen, setIsAIInterviewOpen] = useState(false);
   const [toast, setToast] = useState(null);
 
   const showToast = (message, type = 'success') => {
@@ -73,6 +75,73 @@ export default function App() {
     setCurrentRole('student');
     setActiveTab('profile');
     showToast(message || `Welcome, ${student.name}!`);
+  };
+
+  // Step 6 & Twin Sync: AI Mock Interview Completion Handler
+  const handleInterviewComplete = (interviewResult) => {
+    if (!selectedStudent) return;
+    const newVerified = [
+      ...selectedStudent.verifiedSkills,
+      {
+        name: interviewResult.badge,
+        level: 'Advanced',
+        verifiedBy: 'AI Technical Interview Simulator',
+        verifiedDate: new Date().toISOString().split('T')[0]
+      }
+    ];
+    const updated = {
+      ...selectedStudent,
+      verifiedSkills: newVerified,
+      assessmentScore: Math.min(100, (selectedStudent.assessmentScore || 78) + Math.round(interviewResult.criIncrease))
+    };
+    setSelectedStudent(updated);
+    setStudents(prev => prev.map(s => s.id === updated.id ? updated : s));
+    showToast(`🎉 AI Interview Completed! Verified Badge Awarded & Skill Twin CRI boosted by +${interviewResult.criIncrease}%`);
+  };
+
+  // Step 9 & Closed Loop: Industry Recruiter Feedback Handler (Updates Skill Twin)
+  const handleIndustryFeedback = (appId, feedbackText, rating) => {
+    setApplications(prev => prev.map(app => {
+      if (app.id === appId) {
+        return {
+          ...app,
+          notes: `[Recruiter Evaluation • ${rating}/10]: ${feedbackText}`
+        };
+      }
+      return app;
+    }));
+
+    const targetApp = applications.find(a => a.id === appId);
+    if (targetApp) {
+      setStudents(prev => prev.map(s => {
+        if (s.name.toLowerCase() === targetApp.studentName.toLowerCase()) {
+          const updatedSkills = [
+            ...s.verifiedSkills,
+            {
+              name: `Recruiter Verified: ${targetApp.jobTitle}`,
+              level: 'Proficient',
+              verifiedBy: `${targetApp.company} Interview Panel`,
+              verifiedDate: new Date().toISOString().split('T')[0]
+            }
+          ];
+          return {
+            ...s,
+            verifiedSkills: updatedSkills,
+            assessmentScore: Math.min(100, (s.assessmentScore || 80) + 3)
+          };
+        }
+        return s;
+      }));
+
+      if (selectedStudent && selectedStudent.name.toLowerCase() === targetApp.studentName.toLowerCase()) {
+        setSelectedStudent(prev => ({
+          ...prev,
+          assessmentScore: Math.min(100, (prev.assessmentScore || 80) + 3)
+        }));
+      }
+    }
+
+    showToast(`🔄 Closed Loop Active: Candidate Skill Twin updated from live industry evaluation!`);
   };
 
   // Initial Data Fetch
@@ -278,6 +347,7 @@ export default function App() {
         onOpenAICoach={() => setIsAICoachOpen(true)}
         onOpenResumeModal={() => setIsResumeModalOpen(true)}
         onOpenAuthModal={() => setIsAuthModalOpen(true)}
+        onOpenAIInterview={() => setIsAIInterviewOpen(true)}
       />
 
       {/* Main Container */}
@@ -296,6 +366,8 @@ export default function App() {
             onOpenAICoach={() => setIsAICoachOpen(true)}
             onOpenResumeModal={() => setIsResumeModalOpen(true)}
             onOpenAuthModal={() => setIsAuthModalOpen(true)}
+            onOpenAIInterview={() => setIsAIInterviewOpen(true)}
+            selectedStudent={selectedStudent}
           />
         )}
 
@@ -330,6 +402,7 @@ export default function App() {
             applications={applications}
             currentRole={currentRole}
             onUpdateStatus={handleUpdateAppStatus}
+            onIndustryFeedback={handleIndustryFeedback}
           />
         )}
 
@@ -345,6 +418,7 @@ export default function App() {
             student={selectedStudent}
             onOpenResumeModal={() => setIsResumeModalOpen(true)}
             onOpenAICoach={() => setIsAICoachOpen(true)}
+            onOpenAIInterview={() => setIsAIInterviewOpen(true)}
           />
         )}
 
@@ -438,6 +512,15 @@ export default function App() {
           onClose={() => setIsAuthModalOpen(false)}
           onLoginSuccess={handleStudentAuthSuccess}
           students={students}
+        />
+      )}
+
+      {isAIInterviewOpen && (
+        <AIInterviewModal
+          isOpen={isAIInterviewOpen}
+          onClose={() => setIsAIInterviewOpen(false)}
+          student={selectedStudent}
+          onInterviewComplete={handleInterviewComplete}
         />
       )}
 
